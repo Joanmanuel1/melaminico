@@ -12,8 +12,7 @@ Este repositorio guarda los archivos finales de la **landing page**, que es la p
 
 ```
 .
-├── diseño/            Diseño original de la landing (PDF). Es la referencia visual.
-├── imagenes/          Material gráfico original: fotos de la diseñadora, piezas de Canva y capturas.
+├── diseño/            Diseño original de la diseñadora (PDF): versión celular ("landing page melaminico") y versión escritorio ("pagina melaminico"). Es la referencia visual.
 └── landing-tiendup/   El código de la landing que está publicada. Es la carpeta más importante.
     ├── src/           ✏️  CÓDIGO FUENTE: acá se hacen los cambios.
     │   └── shared/        Estilos y scripts que comparten todas las secciones.
