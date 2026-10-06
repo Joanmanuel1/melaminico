@@ -1,0 +1,1632 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Preview Tiendup</title><link rel="stylesheet" href="https://d3ekkp2oigezer.cloudfront.net/business/91976/themes/lite/assets/css/metropolis.css?v=2"><link rel="stylesheet" href="https://d3ekkp2oigezer.cloudfront.net/business/91976/themes/lite/assets/css/uikit.lite2.min.css?v=2"><link rel="stylesheet" href="https://d3ekkp2oigezer.cloudfront.net/business/91976/themes/lite/assets/css/style.css?v=2"></head><body><div class="home-page-wrapper"><div class="page-section uk-section uk-padding-remove-vertical uk-section-muted"><div class="uk-container uk-width-5-6@l"><div class="uk-width-1-1 custom-code-container"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Archivo+Narrow:wght@700&display=swap">
+<style>
+.melh,
+.melh.melh *,
+.melh.melh *::before,
+.melh.melh *::after { box-sizing: border-box; }
+.melh {
+  --melh-naranja: #f3792d;
+  --melh-naranja-claro: #ff8e45;
+  --melh-navy: #1b2128;
+  --melh-crema: #f2eddd;
+  --melh-blanco: #ffffff;
+  --melh-gris-btn: #4a4a48;
+  --melh-f-titulo: "Archivo Black", "Arial Black", Impact, sans-serif;
+  --melh-f-texto: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
+  --melh-f-slab: "Alfa Slab One", Georgia, serif;
+  --melh-pad: clamp(1.25rem, 6vw, 3rem);
+  --melh-max: 1180px;
+  --melh-gutter: var(--melh-pad);
+
+  background: var(--melh-navy);
+  color: var(--melh-blanco);
+  font-family: var(--melh-f-texto);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw + var(--melh-sbw, 0px) / 2);
+  margin-right: calc(50% - 50vw + var(--melh-sbw, 0px) / 2);
+  overflow: hidden;
+  overflow-x: hidden;
+}
+.melh.melh img,
+.melh.melh video,
+.melh.melh svg { display: block; max-width: 100%; }
+.melh.melh h1,
+.melh.melh h2,
+.melh.melh h3,
+.melh.melh p,
+.melh.melh figure,
+.melh.melh ul { margin: 0; padding: 0; }
+.melh.melh ul { list-style: none; }
+.melh.melh h1,
+.melh.melh h2,
+.melh.melh h3 {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  color: inherit;
+}
+.melh.melh a,
+.melh.melh a:hover,
+.melh.melh a:focus { color: inherit; text-decoration: none; }
+.melh.melh a:not(.melh-uk-button),
+.melh.melh a:not(.melh-uk-button):hover,
+.melh.melh a:not(.melh-uk-button):focus { text-decoration: none !important; }
+.melh.melh a:focus-visible { outline: 3px solid var(--melh-naranja); outline-offset: 4px; }
+@media (min-width: 960px) {
+.melh { --melh-gutter: max(var(--melh-pad), calc((100vw - var(--melh-max)) / 2)); }
+}
+.melh.melh .melh-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: .9rem 2rem;
+  background: var(--melh-blanco);
+  color: var(--melh-gris-btn);
+  border: 2px solid #000;
+  border-radius: 22px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, .22);
+  font-family: var(--melh-f-titulo);
+  font-size: clamp(1rem, 4.2vw, 1.25rem);
+  letter-spacing: -.01em;
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.melh.melh a.melh-btn-pill:hover {
+  color: var(--melh-gris-btn);
+  transform: translate(-2px, -2px);
+  box-shadow: 11px 11px 0 rgba(0, 0, 0, .25);
+  background: var(--melh-crema);
+}
+.melh.melh .melh-btn-pill:active { transform: translate(4px, 4px); box-shadow: 3px 3px 0 rgba(0, 0, 0, .25); }
+@media (prefers-reduced-motion: reduce) {
+.melh.melh .melh-btn-pill { transition: none; }
+}
+.melh.melh-js .melh-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1);
+}
+.melh.melh-js .melh-reveal.melh-is-visible { opacity: 1; transform: none; }
+.melh.melh .melh-hero {
+  position: relative;
+  min-height: clamp(560px, 74svh, 700px);
+  padding: 1.5rem var(--melh-pad) 0;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+}
+.melh.melh .melh-hero__bg {
+  position: absolute;
+  inset: -20px;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(27, 33, 40, .15) 0%, rgba(27, 33, 40, .55) 100%),
+    url("https://bu-cdn.tiendup.com/business/91976/themes/lite/assets/img/o_1k44gp97e1ecgc7m1356c1ntdp24.jpg") center / cover;
+  filter: blur(9px) saturate(.7);
+}
+.melh.melh .melh-hero__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: var(--melh-max);
+  width: 100%;
+  margin: 0 auto;
+}
+.melh.melh .melh-hero__martillo { width: clamp(64px, 18vw, 110px); aspect-ratio: 120 / 140; color: #000; transform: rotate(40deg); }
+.melh.melh .melh-hero__logo { width: clamp(120px, 34vw, 190px); height: auto; margin-top: .5rem; filter: drop-shadow(0 1px 0 rgba(255, 255, 255, .5)); }
+.melh.melh .melh-hero__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.1rem;
+  max-width: var(--melh-max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 0 1.75rem;
+}
+.melh.melh .melh-hero__firma {
+  align-self: flex-start;
+  font-family: var(--melh-f-titulo);
+  font-size: clamp(.875rem, 3vw, 1rem);
+  color: var(--melh-blanco);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .5);
+  line-height: 1;
+}
+.melh.melh .melh-hero__firma span { color: var(--melh-naranja); }
+.melh.melh .melh-hero__marca {
+  font-family: var(--melh-f-titulo);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 13.4vw, 9rem);
+  line-height: .9;
+  letter-spacing: -.045em;
+  color: var(--melh-naranja);
+  margin-top: -.9rem;
+  text-shadow: 0 6px 30px rgba(0, 0, 0, .25);
+}
+.melh.melh .melh-hero__curso {
+  font-family: var(--melh-f-titulo);
+  font-size: clamp(1.9rem, 8.6vw, 4rem);
+  letter-spacing: -.03em;
+  line-height: 1;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, .4);
+  margin-top: 1rem;
+}
+.melh.melh .melh-hero__lema {
+  max-width: 27ch;
+  font-size: clamp(1.15rem, 4.8vw, 1.9rem);
+  line-height: 1.12;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .5);
+}
+.melh.melh .melh-hero__lema em { display: block; font-style: normal; color: var(--melh-naranja-claro); }
+.melh.melh .melh-hero__sub {
+  font-family: var(--melh-f-titulo);
+  font-size: clamp(.95rem, 3.8vw, 1.3rem);
+  letter-spacing: .01em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .5);
+}
+.melh.melh .melh-hero__body .melh-btn-pill { margin-top: 1rem; }
+.melh.melh .melh-hero__laptop { width: clamp(150px, 42vw, 260px); height: auto; margin-top: 1.5rem; }
+.melh.melh .melh-franja {
+  margin: 0 calc(var(--melh-pad) * -1);
+  padding: clamp(1rem, 3.5vw, 1.5rem) var(--melh-pad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  background: rgba(27, 33, 40, .58);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, .2);
+}
+.melh.melh .melh-franja__col { width: 100%; max-width: 640px; display: flex; flex-direction: column; align-items: center; gap: .75rem; }
+.melh.melh .melh-franja__col--faq { padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, .22); }
+.melh.melh .melh-franja__titulo {
+  font-family: var(--melh-f-titulo);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 5.4vw, 1.9rem);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  color: var(--melh-blanco);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .45);
+  text-wrap: balance;
+}
+.melh.melh .melh-franja__titulo span {
+  display: inline-block;
+  background: var(--melh-naranja);
+  color: var(--melh-navy);
+  padding: 0 .18em;
+  border-radius: 6px;
+  text-shadow: none;
+  transform: rotate(-2deg);
+}
+.melh.melh .melh-franja__lista {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  text-align: left;
+  font-family: var(--melh-f-titulo);
+  font-size: clamp(.875rem, 3.6vw, 1rem);
+  line-height: 1.25;
+  color: var(--melh-blanco);
+}
+.melh.melh .melh-franja__lista li { display: flex; align-items: flex-start; gap: .55rem; }
+.melh.melh .melh-franja__lista svg { width: 1.1rem; height: 1.1rem; color: var(--melh-naranja); flex: none; margin-top: .08rem; }
+.melh.melh .melh-franja__pregunta {
+  font-family: var(--melh-f-titulo);
+  font-weight: 400;
+  font-size: clamp(.95rem, 3.8vw, 1.1rem);
+  line-height: 1.25;
+  color: var(--melh-blanco);
+}
+.melh.melh .melh-franja__respuesta {
+  font-size: clamp(1rem, 3.9vw, 1.15rem);
+  line-height: 1.3;
+  color: var(--melh-crema);
+}
+@media (min-width: 960px) {
+.melh.melh .melh-hero__body {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    grid-template-areas: "firma laptop" "marca laptop" "curso laptop" "lema laptop" "sub laptop" "btn laptop";
+    align-content: center;
+    text-align: left;
+    justify-items: start;
+    column-gap: 4rem;
+    row-gap: 1rem;
+  }
+.melh.melh .melh-hero__firma { grid-area: firma; align-self: end; }
+.melh.melh .melh-hero__marca { grid-area: marca; margin-top: 0; font-size: min(6.1vw, 5.6rem); white-space: nowrap; }
+.melh.melh .melh-hero__curso { grid-area: curso; font-size: clamp(2.4rem, 4.4vw, 4rem); margin-top: .5rem; white-space: nowrap; }
+.melh.melh .melh-hero__lema { grid-area: lema; max-width: none; font-size: 1.7rem; }
+.melh.melh .melh-hero__sub { grid-area: sub; }
+.melh.melh .melh-hero__body .melh-btn-pill { grid-area: btn; }
+.melh.melh .melh-hero__laptop { grid-area: laptop; justify-self: center; align-self: center; width: min(100%, 420px); margin: 0; }
+.melh.melh .melh-hero__body > * { min-width: 0; }
+.melh.melh .melh-franja { flex-direction: row; align-items: center; justify-content: center; gap: 0; padding-left: var(--melh-gutter); padding-right: var(--melh-gutter); }
+.melh.melh .melh-franja__col { flex: 1 1 0; max-width: none; align-items: flex-start; text-align: left; padding: 0 2.25rem; }
+.melh.melh .melh-franja__col:first-child { padding-left: 0; }
+.melh.melh .melh-franja__col--faq { padding-top: 0; padding-right: 0; border-top: 0; border-left: 1px solid rgba(255, 255, 255, .25); }
+.melh.melh .melh-franja__titulo { font-size: 1.6rem; }
+.melh.melh .melh-franja__lista { font-size: .95rem; }
+.melh.melh .melh-franja__pregunta { font-size: 1.05rem; }
+.melh.melh .melh-franja__respuesta { font-size: 1.1rem; }
+}
+</style>
+
+<div class="melh" id="melh-root">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="melh-martillo" viewBox="0 0 120 140">
+    <g fill="currentColor">
+      <rect x="51" y="36" width="18" height="100" rx="9"/>
+      <path d="M44 20h30v24H44z"/>
+      <path d="M74 14h32a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H74z"/>
+      <path d="M44 20C34 12 18 12 6 22c-1 1 0 3 1 3 10-5 22-4 37 8z"/>
+    </g>
+  </symbol>
+  <symbol id="melh-asterisco" viewBox="0 0 48 48">
+    <g fill="currentColor">
+      <rect x="20" y="2" width="8" height="44" rx="4"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(45 24 24)"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(90 24 24)"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(135 24 24)"/>
+    </g>
+  </symbol>
+</svg>
+
+<header class="melh-hero">
+  <div class="melh-hero__bg" aria-hidden="true"></div>
+  <div class="melh-hero__top">
+    <svg class="melh-hero__martillo" aria-hidden="true"><use href="#melh-martillo"/></svg>
+    <img class="melh-hero__logo" src="https://bu-cdn.tiendup.com/business/91976/themes/lite/assets/img/o_1k44g6io712dr1dgbd4fktc94t29.png" alt="Melamínico" width="367" height="74">
+  </div>
+  <div class="melh-hero__body melh-reveal">
+    <p class="melh-hero__firma"><span>NICOLAS</span> SOTO</p>
+    <h2 class="melh-hero__marca">MELAMINICO</h2>
+    <p class="melh-hero__curso">CURSO 100% ONLINE</p>
+    <p class="melh-hero__lema">
+      LA FORMA MÁS COMODA PARA APRENDER
+      <em>CARPINTERÍA DESDE TU CASA.</em>
+    </p>
+    <p class="melh-hero__sub">CREA TU MUEBLE DESDE CERO</p>
+    <a class="melh-btn-pill" href="/c">¡QUIERO EMPEZAR YA!</a>
+    <img class="melh-hero__laptop" src="https://bu-cdn.tiendup.com/business/91976/themes/lite/assets/img/o_1k44gmu3gg73u8jmvjpfgn1k1k.png" alt="" width="700" height="757">
+  </div>
+  <div class="melh-franja melh-reveal">
+    <div class="melh-franja__col">
+      <h2 class="melh-franja__titulo">ESTE CURSO ES PARA <span>VOS</span> SI:</h2>
+      <ul class="melh-franja__lista">
+        <li><svg aria-hidden="true"><use href="#melh-asterisco"/></svg>Querés crear un mueble único y de calidad a un muy bajo costo</li>
+        <li><svg aria-hidden="true"><use href="#melh-asterisco"/></svg>Querés fabricar un mueble para venderlo y generar ingresos</li>
+      </ul>
+    </div>
+    <div class="melh-franja__col melh-franja__col--faq">
+      <h3 class="melh-franja__pregunta">¿Necesito tener herramientas industriales o tener experiencia previa?</h3>
+      <p class="melh-franja__respuesta">No, no necesitás nada de eso: con solo algunas herramientas súper básicas vas a aprender a crear tu mueble sin necesidad de experiencia previa.</p>
+    </div>
+  </div>
+</header>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+  try {
+    var root = document.getElementById("melh-root");
+    if (!root || root.dataset.fitInit) return;
+    root.dataset.fitInit = "1";
+
+    var fit = function () {
+      var sbw = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+      root.style.setProperty("--melh-sbw", sbw + "px");
+    };
+    fit();
+
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(fit).observe(document.documentElement);
+    } else {
+      window.addEventListener("resize", fit, { passive: true });
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+  try {
+  var root = document.getElementById("melh-root");
+  if (!root || root.dataset.motionInit) return;
+  root.dataset.motionInit = "1";
+
+  var els = root.querySelectorAll(".melh-reveal");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  root.classList.add("melh-js");
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("melh-is-visible");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+  els.forEach(function (el) { io.observe(el); });
+
+  setTimeout(function () {
+    els.forEach(function (el) { el.classList.add("melh-is-visible"); });
+  }, 4000);
+  } catch (e) {}
+})();
+</script>
+</div></div></div>
+<div class="page-section uk-section uk-padding-remove-vertical uk-section-muted"><div class="uk-container uk-width-5-6@l"><div class="uk-width-1-1 custom-code-container"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Archivo+Narrow:wght@700&display=swap">
+<style>
+.mela,
+.mela.mela *,
+.mela.mela *::before,
+.mela.mela *::after { box-sizing: border-box; }
+.mela {
+  --mela-naranja: #f3792d;
+  --mela-naranja-claro: #ff8e45;
+  --mela-navy: #1b2128;
+  --mela-crema: #f2eddd;
+  --mela-blanco: #ffffff;
+  --mela-gris-btn: #4a4a48;
+  --mela-f-titulo: "Archivo Black", "Arial Black", Impact, sans-serif;
+  --mela-f-texto: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
+  --mela-f-slab: "Alfa Slab One", Georgia, serif;
+  --mela-pad: clamp(1.25rem, 6vw, 3rem);
+  --mela-max: 1180px;
+  --mela-gutter: var(--mela-pad);
+
+  background: var(--mela-navy);
+  color: var(--mela-blanco);
+  font-family: var(--mela-f-texto);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw + var(--mela-sbw, 0px) / 2);
+  margin-right: calc(50% - 50vw + var(--mela-sbw, 0px) / 2);
+  overflow: hidden;
+  overflow-x: hidden;
+}
+.mela.mela img,
+.mela.mela video,
+.mela.mela svg { display: block; max-width: 100%; }
+.mela.mela h1,
+.mela.mela h2,
+.mela.mela h3,
+.mela.mela p,
+.mela.mela figure,
+.mela.mela ul { margin: 0; padding: 0; }
+.mela.mela ul { list-style: none; }
+.mela.mela h1,
+.mela.mela h2,
+.mela.mela h3 {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  color: inherit;
+}
+.mela.mela a,
+.mela.mela a:hover,
+.mela.mela a:focus { color: inherit; text-decoration: none; }
+.mela.mela a:not(.mela-uk-button),
+.mela.mela a:not(.mela-uk-button):hover,
+.mela.mela a:not(.mela-uk-button):focus { text-decoration: none !important; }
+.mela.mela a:focus-visible { outline: 3px solid var(--mela-naranja); outline-offset: 4px; }
+@media (min-width: 960px) {
+.mela { --mela-gutter: max(var(--mela-pad), calc((100vw - var(--mela-max)) / 2)); }
+}
+.mela.mela .mela-foto { position: relative; overflow: hidden; background: var(--mela-navy); }
+.mela.mela .mela-foto img { width: 100%; height: 100%; object-fit: cover; }
+.mela.mela .mela-foto figcaption { position: absolute; }
+@media (min-width: 960px) {
+.mela.mela .mela-foto img { position: absolute; inset: 0; }
+}
+.mela.mela .mela-chips { display: grid; grid-template-columns: 1fr 1fr; }
+.mela.mela .mela-chip {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  min-height: clamp(64px, 17vw, 96px);
+  padding: .75rem clamp(.8rem, 3vw, 1.5rem);
+  font-family: var(--mela-f-titulo);
+  font-size: clamp(.875rem, 3.3vw, 1.1rem);
+  line-height: 1.12;
+  text-transform: uppercase;
+}
+.mela.mela .mela-chip svg { flex: none; width: clamp(24px, 6.5vw, 40px); height: clamp(24px, 6.5vw, 40px); color: var(--mela-naranja); }
+.mela.mela .mela-chip--navy { background: var(--mela-navy); color: var(--mela-blanco); justify-content: flex-end; text-align: right; }
+.mela.mela .mela-chip--blanco { background: var(--mela-blanco); color: var(--mela-naranja); }
+.mela.mela .mela-chip--navy:has(svg:first-child) { justify-content: flex-start; text-align: left; }
+.mela.mela .mela-chip--blanco:has(span:first-child) { justify-content: flex-end; text-align: right; }
+@media (min-width: 960px) {
+.mela.mela .mela-chip { font-size: 1rem; min-height: 96px; }
+.mela.mela .mela-chip:nth-child(even) { padding-right: calc(var(--mela-gutter) * .5); }
+}
+.mela.mela-js .mela-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1);
+}
+.mela.mela-js .mela-reveal.mela-is-visible { opacity: 1; transform: none; }
+.mela.mela .mela-banner {
+  background: var(--mela-naranja);
+  padding: clamp(1.4rem, 5vw, 2.4rem) var(--mela-pad);
+  text-align: center;
+}
+.mela.mela .mela-banner span {
+  display: block;
+  max-width: var(--mela-max);
+  margin: 0 auto;
+  font-family: var(--mela-f-slab);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 12.5vw, 6.5rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+  color: var(--mela-crema);
+  text-shadow: 3px 3px 0 rgba(27, 33, 40, .28);
+}
+.mela.mela .mela-foto--boceto { aspect-ratio: 9 / 9.3; }
+.mela.mela .mela-foto--boceto img { object-position: 50% 75%; }
+.mela.mela .mela-foto--boceto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(27, 33, 40, .45), transparent 35%, rgba(27, 33, 40, .5));
+}
+.mela.mela .mela-foto--boceto figcaption { inset: 0; z-index: 1; padding: 1.3rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+.mela.mela .mela-foto--boceto small { font-family: var(--mela-f-titulo); font-size: .875rem; }
+.mela.mela .mela-foto--boceto strong { font-family: var(--mela-f-titulo); font-weight: 400; font-size: clamp(2.4rem, 12vw, 5.5rem); line-height: .95; letter-spacing: -.04em; color: var(--mela-naranja); }
+.mela.mela .mela-foto--dosd { aspect-ratio: 9 / 8.2; }
+.mela.mela .mela-foto--dosd::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(27, 33, 40, .3), transparent 40%); }
+.mela.mela .mela-foto--dosd figcaption {
+  inset: 0 0 auto 0;
+  z-index: 1;
+  padding-top: 1.2rem;
+  text-align: center;
+  font-family: var(--mela-f-titulo);
+  font-size: clamp(2.2rem, 11vw, 5rem);
+  letter-spacing: -.03em;
+  color: var(--mela-crema);
+}
+@media (min-width: 960px) {
+.mela.mela .mela-aprender { display: grid; grid-template-columns: 1.1fr .9fr; grid-template-rows: auto 1fr; }
+.mela.mela .mela-aprender .mela-foto--boceto { grid-row: 1 / 3; aspect-ratio: auto; min-height: 0; }
+.mela.mela .mela-aprender .mela-chips { grid-column: 2; }
+.mela.mela .mela-aprender .mela-foto--dosd { grid-column: 2; aspect-ratio: auto; min-height: 300px; }
+.mela.mela .mela-foto--boceto img { object-position: 50% 75%; }
+.mela.mela .mela-foto--boceto figcaption { padding-left: var(--mela-gutter); }
+}
+</style>
+
+<div class="mela" id="mela-root">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mela-asterisco" viewBox="0 0 48 48">
+    <g fill="currentColor">
+      <rect x="20" y="2" width="8" height="44" rx="4"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(45 24 24)"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(90 24 24)"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(135 24 24)"/>
+    </g>
+  </symbol>
+</svg>
+
+<h2 class="mela-banner"><span>¿Qué voy a aprender?</span></h2>
+
+<section class="mela-aprender" aria-label="Qué vas a aprender">
+
+  <figure class="mela-foto mela-foto--boceto mela-reveal">
+    <img src="https://bu-cdn.tiendup.com/business/91976/themes/lite/assets/img/o_1k44gqjl715n1get1nqj9a2ppq2k.jpg" alt="Nicolas dibujando el boceto de un mueble a mano" loading="lazy">
+    <figcaption>
+      <small>MELAMINICO</small>
+      <strong>BOCETADO</strong>
+    </figcaption>
+  </figure>
+
+  <ul class="mela-chips mela-reveal">
+    <li class="mela-chip mela-chip--navy"><span>SketchUp</span><svg aria-hidden="true"><use href="#mela-asterisco"/></svg></li>
+    <li class="mela-chip mela-chip--blanco"><svg aria-hidden="true"><use href="#mela-asterisco"/></svg><span>Boceto manual</span></li>
+    <li class="mela-chip mela-chip--blanco"><span>Asesoramiento</span><svg aria-hidden="true"><use href="#mela-asterisco"/></svg></li>
+    <li class="mela-chip mela-chip--navy"><svg aria-hidden="true"><use href="#mela-asterisco"/></svg><span>SketchCut</span></li>
+  </ul>
+
+  <figure class="mela-foto mela-foto--dosd mela-reveal">
+    <img src="https://bu-cdn.tiendup.com/business/91976/themes/lite/assets/img/o_1k44gp97e1ecgc7m1356c1ntdp24.jpg" alt="Mesita de luz de melamina en un dormitorio" loading="lazy">
+    <figcaption>2D Y 3D</figcaption>
+  </figure>
+
+</section>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+  try {
+    var root = document.getElementById("mela-root");
+    if (!root || root.dataset.fitInit) return;
+    root.dataset.fitInit = "1";
+
+    var fit = function () {
+      var sbw = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+      root.style.setProperty("--mela-sbw", sbw + "px");
+    };
+    fit();
+
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(fit).observe(document.documentElement);
+    } else {
+      window.addEventListener("resize", fit, { passive: true });
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+  try {
+  var root = document.getElementById("mela-root");
+  if (!root || root.dataset.motionInit) return;
+  root.dataset.motionInit = "1";
+
+  var els = root.querySelectorAll(".mela-reveal");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  root.classList.add("mela-js");
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("mela-is-visible");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+  els.forEach(function (el) { io.observe(el); });
+
+  setTimeout(function () {
+    els.forEach(function (el) { el.classList.add("mela-is-visible"); });
+  }, 4000);
+  } catch (e) {}
+})();
+</script>
+</div></div></div>
+<div class="page-section uk-section uk-padding-remove-vertical uk-section-muted"><div class="uk-container uk-width-5-6@l"><div class="uk-width-1-1 custom-code-container"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Archivo+Narrow:wght@700&display=swap">
+<style>
+.melp,
+.melp.melp *,
+.melp.melp *::before,
+.melp.melp *::after { box-sizing: border-box; }
+.melp {
+  --melp-naranja: #f3792d;
+  --melp-naranja-claro: #ff8e45;
+  --melp-navy: #1b2128;
+  --melp-crema: #f2eddd;
+  --melp-blanco: #ffffff;
+  --melp-gris-btn: #4a4a48;
+  --melp-f-titulo: "Archivo Black", "Arial Black", Impact, sans-serif;
+  --melp-f-texto: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
+  --melp-f-slab: "Alfa Slab One", Georgia, serif;
+  --melp-pad: clamp(1.25rem, 6vw, 3rem);
+  --melp-max: 1180px;
+  --melp-gutter: var(--melp-pad);
+
+  background: var(--melp-navy);
+  color: var(--melp-blanco);
+  font-family: var(--melp-f-texto);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw + var(--melp-sbw, 0px) / 2);
+  margin-right: calc(50% - 50vw + var(--melp-sbw, 0px) / 2);
+  overflow: hidden;
+  overflow-x: hidden;
+}
+.melp.melp img,
+.melp.melp video,
+.melp.melp svg { display: block; max-width: 100%; }
+.melp.melp h1,
+.melp.melp h2,
+.melp.melp h3,
+.melp.melp p,
+.melp.melp figure,
+.melp.melp ul { margin: 0; padding: 0; }
+.melp.melp ul { list-style: none; }
+.melp.melp h1,
+.melp.melp h2,
+.melp.melp h3 {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  color: inherit;
+}
+.melp.melp a,
+.melp.melp a:hover,
+.melp.melp a:focus { color: inherit; text-decoration: none; }
+.melp.melp a:not(.melp-uk-button),
+.melp.melp a:not(.melp-uk-button):hover,
+.melp.melp a:not(.melp-uk-button):focus { text-decoration: none !important; }
+.melp.melp a:focus-visible { outline: 3px solid var(--melp-naranja); outline-offset: 4px; }
+@media (min-width: 960px) {
+.melp { --melp-gutter: max(var(--melp-pad), calc((100vw - var(--melp-max)) / 2)); }
+}
+.melp.melp .melp-foto { position: relative; overflow: hidden; background: var(--melp-navy); }
+.melp.melp .melp-foto img { width: 100%; height: 100%; object-fit: cover; }
+.melp.melp .melp-foto figcaption { position: absolute; }
+@media (min-width: 960px) {
+.melp.melp .melp-foto img { position: absolute; inset: 0; }
+}
+.melp.melp .melp-chips { display: grid; grid-template-columns: 1fr 1fr; }
+.melp.melp .melp-chip {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  min-height: clamp(64px, 17vw, 96px);
+  padding: .75rem clamp(.8rem, 3vw, 1.5rem);
+  font-family: var(--melp-f-titulo);
+  font-size: clamp(.875rem, 3.3vw, 1.1rem);
+  line-height: 1.12;
+  text-transform: uppercase;
+}
+.melp.melp .melp-chip svg { flex: none; width: clamp(24px, 6.5vw, 40px); height: clamp(24px, 6.5vw, 40px); color: var(--melp-naranja); }
+.melp.melp .melp-chip--navy { background: var(--melp-navy); color: var(--melp-blanco); justify-content: flex-end; text-align: right; }
+.melp.melp .melp-chip--blanco { background: var(--melp-blanco); color: var(--melp-naranja); }
+.melp.melp .melp-chip--navy:has(svg:first-child) { justify-content: flex-start; text-align: left; }
+.melp.melp .melp-chip--blanco:has(span:first-child) { justify-content: flex-end; text-align: right; }
+@media (min-width: 960px) {
+.melp.melp .melp-chip { font-size: 1rem; min-height: 96px; }
+.melp.melp .melp-chip:nth-child(even) { padding-right: calc(var(--melp-gutter) * .5); }
+}
+.melp.melp-js .melp-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1);
+}
+.melp.melp-js .melp-reveal.melp-is-visible { opacity: 1; transform: none; }
+.melp.melp .melp-foto--paso { aspect-ratio: 9 / 9.3; }
+.melp.melp .melp-foto--paso figcaption { inset: 0 auto auto 0; padding: clamp(2rem, 11vw, 4rem) 0 0 clamp(1.5rem, 8vw, 3rem); max-width: 80%; }
+.melp.melp .melp-foto--paso h2 {
+  font-family: var(--melp-f-titulo);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 7.6vw, 3.3rem);
+  line-height: 1.02;
+  letter-spacing: -.03em;
+  color: var(--melp-crema);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .35);
+}
+.melp.melp .melp-taller { display: grid; grid-template-columns: 1fr 1fr; background: var(--melp-navy); }
+.melp.melp .melp-taller__foto { position: relative; background: var(--melp-crema); padding-left: clamp(48px, 9vw, 56px); }
+.melp.melp .melp-taller__foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.melp.melp .melp-taller__foto figcaption {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: clamp(48px, 9vw, 56px);
+  background: var(--melp-crema);
+  color: var(--melp-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--melp-f-titulo);
+  font-size: clamp(1.35rem, 6.4vw, 2.6rem);
+  letter-spacing: -.03em;
+  line-height: 1;
+  gap: .3rem;
+}
+.melp.melp .melp-taller__foto figcaption small { font-family: var(--melp-f-texto); font-size: max(.875rem, .32em); letter-spacing: .06em; text-transform: uppercase; }
+.melp.melp .melp-taller__ig { padding: 1.5rem 1.2rem; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 1rem; }
+.melp.melp .melp-taller__ig img { width: min(72%, 220px); height: auto; border: 3px solid #000; border-radius: 24px; box-shadow: 0 10px 30px rgba(0, 0, 0, .45); }
+.melp.melp .melp-taller__ig p { align-self: flex-end; text-align: right; font-family: var(--melp-f-titulo); font-size: clamp(.875rem, 2.8vw, .95rem); line-height: 1.15; }
+@media (min-width: 960px) {
+.melp.melp .melp-primer-paso { display: grid; grid-template-columns: 1.1fr .9fr; grid-template-rows: auto 1fr; }
+.melp.melp .melp-primer-paso .melp-foto--paso { grid-row: 1 / 3; aspect-ratio: auto; min-height: 0; }
+.melp.melp .melp-primer-paso .melp-foto--paso img { object-position: 60% 40%; }
+.melp.melp .melp-primer-paso .melp-chips { grid-column: 2; }
+.melp.melp .melp-primer-paso .melp-taller { grid-column: 2; height: 440px; }
+.melp.melp .melp-foto--paso figcaption { padding-left: var(--melp-gutter); }
+.melp.melp .melp-taller__foto img { position: absolute; inset: 0 0 0 clamp(48px, 9vw, 56px); width: calc(100% - clamp(48px, 9vw, 56px)); height: 100%; }
+.melp.melp .melp-taller__foto figcaption { font-size: 1.7rem; }
+.melp.melp .melp-taller__ig { padding: 2rem calc(var(--melp-gutter) * .5) 2rem 1.5rem; justify-content: center; gap: 2rem; }
+.melp.melp .melp-taller__ig img { width: min(70%, 230px); }
+.melp.melp .melp-taller__ig p { font-size: 1rem; }
+}
+</style>
+
+<div class="melp" id="melp-root">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="melp-asterisco" viewBox="0 0 48 48">
+    <g fill="currentColor">
+      <rect x="20" y="2" width="8" height="44" rx="4"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(45 24 24)"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(90 24 24)"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(135 24 24)"/>
+    </g>
+  </symbol>
+</svg>
+
+<section class="melp-primer-paso" aria-labelledby="melp-titulo">
+
+  <figure class="melp-foto melp-foto--paso melp-reveal">
+    <img src="https://bu-cdn.tiendup.com/business/91976/themes/lite/assets/img/o_1k44gshh91daa1vevs3v1mt25ra3g.jpg" alt="Nicolas Soto apoyado en un mueble de melamina terminado" loading="lazy">
+    <figcaption>
+      <h2 id="melp-titulo">TU PRIMER PASO PARA CONSTRUIR JUNTOS</h2>
+    </figcaption>
+  </figure>
+
+  <ul class="melp-chips melp-reveal">
+    <li class="melp-chip melp-chip--navy"><span>Clases grabadas</span><svg aria-hidden="true"><use href="#melp-asterisco"/></svg></li>
+    <li class="melp-chip melp-chip--blanco"><svg aria-hidden="true"><use href="#melp-asterisco"/></svg><span>Asesorías personalizadas</span></li>
+    <li class="melp-chip melp-chip--blanco"><span>Módulos teóricos</span><svg aria-hidden="true"><use href="#melp-asterisco"/></svg></li>
+    <li class="melp-chip melp-chip--navy"><svg aria-hidden="true"><use href="#melp-asterisco"/></svg><span>Programas de diseño 2D 3D</span></li>
+  </ul>
+
+  <div class="melp-taller melp-reveal">
+    <figure class="melp-taller__foto">
+      <img src="https://bu-cdn.tiendup.com/business/91976/themes/lite/assets/img/o_1k44gvlsl1adp9jv5mi16b1qtf42.jpg" alt="Nicolas Soto con casco, lentes y barbijo en el taller" loading="lazy">
+      <figcaption>MELAMINICO<small>Taller online</small></figcaption>
+    </figure>
+    <div class="melp-taller__ig">
+      <img src="https://bu-cdn.tiendup.com/business/91976/themes/lite/assets/img/o_1k44h0sul1pe714e74ug1dgo3bv4k.png" alt="Perfil de Instagram de Muebles SH" loading="lazy" width="296" height="640">
+      <p>NICOLAS SOTO<br>REF- MUEBLES SH</p>
+    </div>
+  </div>
+
+</section>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+  try {
+    var root = document.getElementById("melp-root");
+    if (!root || root.dataset.fitInit) return;
+    root.dataset.fitInit = "1";
+
+    var fit = function () {
+      var sbw = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+      root.style.setProperty("--melp-sbw", sbw + "px");
+    };
+    fit();
+
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(fit).observe(document.documentElement);
+    } else {
+      window.addEventListener("resize", fit, { passive: true });
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+  try {
+  var root = document.getElementById("melp-root");
+  if (!root || root.dataset.motionInit) return;
+  root.dataset.motionInit = "1";
+
+  var els = root.querySelectorAll(".melp-reveal");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  root.classList.add("melp-js");
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("melp-is-visible");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+  els.forEach(function (el) { io.observe(el); });
+
+  setTimeout(function () {
+    els.forEach(function (el) { el.classList.add("melp-is-visible"); });
+  }, 4000);
+  } catch (e) {}
+})();
+</script>
+</div></div></div>
+<div class="page-section uk-section uk-padding-remove-vertical uk-section-muted"><div class="uk-container uk-width-5-6@l"><div class="uk-width-1-1 custom-code-container"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Archivo+Narrow:wght@700&display=swap">
+<style>
+.melv,
+.melv.melv *,
+.melv.melv *::before,
+.melv.melv *::after { box-sizing: border-box; }
+.melv {
+  --melv-naranja: #f3792d;
+  --melv-naranja-claro: #ff8e45;
+  --melv-navy: #1b2128;
+  --melv-crema: #f2eddd;
+  --melv-blanco: #ffffff;
+  --melv-gris-btn: #4a4a48;
+  --melv-f-titulo: "Archivo Black", "Arial Black", Impact, sans-serif;
+  --melv-f-texto: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
+  --melv-f-slab: "Alfa Slab One", Georgia, serif;
+  --melv-pad: clamp(1.25rem, 6vw, 3rem);
+  --melv-max: 1180px;
+  --melv-gutter: var(--melv-pad);
+
+  background: var(--melv-navy);
+  color: var(--melv-blanco);
+  font-family: var(--melv-f-texto);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw + var(--melv-sbw, 0px) / 2);
+  margin-right: calc(50% - 50vw + var(--melv-sbw, 0px) / 2);
+  overflow: hidden;
+  overflow-x: hidden;
+}
+.melv.melv img,
+.melv.melv video,
+.melv.melv svg { display: block; max-width: 100%; }
+.melv.melv h1,
+.melv.melv h2,
+.melv.melv h3,
+.melv.melv p,
+.melv.melv figure,
+.melv.melv ul { margin: 0; padding: 0; }
+.melv.melv ul { list-style: none; }
+.melv.melv h1,
+.melv.melv h2,
+.melv.melv h3 {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  color: inherit;
+}
+.melv.melv a,
+.melv.melv a:hover,
+.melv.melv a:focus { color: inherit; text-decoration: none; }
+.melv.melv a:not(.melv-uk-button),
+.melv.melv a:not(.melv-uk-button):hover,
+.melv.melv a:not(.melv-uk-button):focus { text-decoration: none !important; }
+.melv.melv a:focus-visible { outline: 3px solid var(--melv-naranja); outline-offset: 4px; }
+@media (min-width: 960px) {
+.melv { --melv-gutter: max(var(--melv-pad), calc((100vw - var(--melv-max)) / 2)); }
+}
+.melv.melv .melv-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: .9rem 2rem;
+  background: var(--melv-blanco);
+  color: var(--melv-gris-btn);
+  border: 2px solid #000;
+  border-radius: 22px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, .22);
+  font-family: var(--melv-f-titulo);
+  font-size: clamp(1rem, 4.2vw, 1.25rem);
+  letter-spacing: -.01em;
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.melv.melv a.melv-btn-pill:hover {
+  color: var(--melv-gris-btn);
+  transform: translate(-2px, -2px);
+  box-shadow: 11px 11px 0 rgba(0, 0, 0, .25);
+  background: var(--melv-crema);
+}
+.melv.melv .melv-btn-pill:active { transform: translate(4px, 4px); box-shadow: 3px 3px 0 rgba(0, 0, 0, .25); }
+@media (prefers-reduced-motion: reduce) {
+.melv.melv .melv-btn-pill { transition: none; }
+}
+.melv.melv-js .melv-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1);
+}
+.melv.melv-js .melv-reveal.melv-is-visible { opacity: 1; transform: none; }
+.melv.melv .melv-armado {
+  position: relative;
+  min-height: min(150vw, 900px);
+  padding: clamp(2rem, 9vw, 4rem) var(--melv-pad) clamp(2rem, 8vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+.melv.melv .melv-armado__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.melv.melv .melv-armado__yt { position: absolute; inset: 0; z-index: -2; overflow: hidden; container-type: size; pointer-events: none; }
+.melv.melv .melv-armado__yt iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100cqw, calc(100cqh * 9 / 16));
+  height: max(100cqh, calc(100cqw * 16 / 9));
+  transform: translate(-50%, -50%);
+  border: 0;
+}
+.melv.melv .melv-armado__velo { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(27, 33, 40, .5), rgba(27, 33, 40, .05) 45%, rgba(27, 33, 40, .35)); }
+.melv.melv .melv-armado__copy { max-width: var(--melv-max); width: 100%; margin: 0 auto; }
+.melv.melv .melv-armado h2 {
+  font-family: var(--melv-f-titulo);
+  font-weight: 400;
+  font-size: clamp(3rem, 15.5vw, 7.5rem);
+  line-height: .86;
+  letter-spacing: -.045em;
+  color: var(--melv-crema);
+}
+.melv.melv .melv-armado h2 span { display: block; color: var(--melv-naranja); }
+.melv.melv .melv-armado p {
+  margin: clamp(2rem, 14vw, 7rem) 0 0 auto;
+  max-width: 14ch;
+  text-align: right;
+  font-family: var(--melv-f-titulo);
+  font-size: clamp(1.1rem, 5vw, 2rem);
+  line-height: 1.08;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .5);
+}
+.melv.melv .melv-armado p small { display: block; margin-top: .3rem; font-family: var(--melv-f-texto); font-size: max(.875rem, .5em); color: var(--melv-naranja); letter-spacing: .04em; }
+.melv.melv .melv-btn-pill--armado { align-self: center; }
+@media (min-width: 960px) {
+.melv.melv .melv-armado { min-height: clamp(820px, 100vh, 1050px); }
+.melv.melv .melv-armado__copy { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 2rem; }
+.melv.melv .melv-armado p { margin: 0 0 0 auto; font-size: 2rem; }
+}
+</style>
+
+<div class="melv" id="melv-root">
+<section class="melv-armado" aria-labelledby="melv-titulo">
+  <img class="melv-armado__video" src="https://bu-cdn.tiendup.com/business/91976/themes/lite/assets/img/o_1k44h36q3eaiofu1mu415id1quo54.jpg" alt="" aria-hidden="true">
+  <div class="melv-armado__yt" aria-hidden="true"><iframe src="https://www.youtube-nocookie.com/embed/zXMLsR15_OM?autoplay=1&mute=1&loop=1&playlist=zXMLsR15_OM&controls=0&playsinline=1&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3&fs=0" title="Video: armado del mueble" loading="lazy" allow="autoplay; encrypted-media" tabindex="-1"></iframe></div>
+  <div class="melv-armado__velo" aria-hidden="true"></div>
+  <div class="melv-armado__copy melv-reveal">
+    <h2 id="melv-titulo"><span>ARMADO</span> DEL <span>MUEBLE</span></h2>
+    <p>PENSADO PARA LOS QUE NUNCA TRABAJARON CON MELAMINA<small>MELAMINICO</small></p>
+  </div>
+  <a class="melv-btn-pill melv-btn-pill--armado" href="/c">VISITA NUESTRA PÁGINA</a>
+</section>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+  try {
+    var root = document.getElementById("melv-root");
+    if (!root || root.dataset.fitInit) return;
+    root.dataset.fitInit = "1";
+
+    var fit = function () {
+      var sbw = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+      root.style.setProperty("--melv-sbw", sbw + "px");
+    };
+    fit();
+
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(fit).observe(document.documentElement);
+    } else {
+      window.addEventListener("resize", fit, { passive: true });
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+  try {
+  var root = document.getElementById("melv-root");
+  if (!root || root.dataset.motionInit) return;
+  root.dataset.motionInit = "1";
+
+  var els = root.querySelectorAll(".melv-reveal");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  root.classList.add("melv-js");
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("melv-is-visible");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+  els.forEach(function (el) { io.observe(el); });
+
+  setTimeout(function () {
+    els.forEach(function (el) { el.classList.add("melv-is-visible"); });
+  }, 4000);
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+  try {
+  var root = document.getElementById("melv-root");
+  if (!root || root.dataset.videoInit) return;
+  root.dataset.videoInit = "1";
+
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var yt = root.querySelector("iframe");
+  if (yt && reduce) {
+    yt.parentNode.removeChild(yt);
+    return;
+  }
+
+  var video = root.querySelector("video");
+  if (!video) return;
+
+  if (reduce) {
+    video.removeAttribute("autoplay");
+    video.pause();
+    return;
+  }
+  if (!("IntersectionObserver" in window)) return;
+
+  new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        var p = video.play();
+        if (p && p.catch) p.catch(function () {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.2 }).observe(video);
+  } catch (e) {}
+})();
+</script>
+</div></div></div>
+<div class="page-section uk-section uk-padding-remove-vertical uk-section-muted"><div class="uk-container uk-width-5-6@l"><div class="uk-width-1-1 custom-code-container"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Archivo+Narrow:wght@700&display=swap">
+<style>
+.melc,
+.melc.melc *,
+.melc.melc *::before,
+.melc.melc *::after { box-sizing: border-box; }
+.melc {
+  --melc-naranja: #f3792d;
+  --melc-naranja-claro: #ff8e45;
+  --melc-navy: #1b2128;
+  --melc-crema: #f2eddd;
+  --melc-blanco: #ffffff;
+  --melc-gris-btn: #4a4a48;
+  --melc-f-titulo: "Archivo Black", "Arial Black", Impact, sans-serif;
+  --melc-f-texto: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
+  --melc-f-slab: "Alfa Slab One", Georgia, serif;
+  --melc-pad: clamp(1.25rem, 6vw, 3rem);
+  --melc-max: 1180px;
+  --melc-gutter: var(--melc-pad);
+
+  background: var(--melc-navy);
+  color: var(--melc-blanco);
+  font-family: var(--melc-f-texto);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw + var(--melc-sbw, 0px) / 2);
+  margin-right: calc(50% - 50vw + var(--melc-sbw, 0px) / 2);
+  overflow: hidden;
+  overflow-x: hidden;
+}
+.melc.melc img,
+.melc.melc video,
+.melc.melc svg { display: block; max-width: 100%; }
+.melc.melc h1,
+.melc.melc h2,
+.melc.melc h3,
+.melc.melc p,
+.melc.melc figure,
+.melc.melc ul { margin: 0; padding: 0; }
+.melc.melc ul { list-style: none; }
+.melc.melc h1,
+.melc.melc h2,
+.melc.melc h3 {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  color: inherit;
+}
+.melc.melc a,
+.melc.melc a:hover,
+.melc.melc a:focus { color: inherit; text-decoration: none; }
+.melc.melc a:not(.melc-uk-button),
+.melc.melc a:not(.melc-uk-button):hover,
+.melc.melc a:not(.melc-uk-button):focus { text-decoration: none !important; }
+.melc.melc a:focus-visible { outline: 3px solid var(--melc-naranja); outline-offset: 4px; }
+@media (min-width: 960px) {
+.melc { --melc-gutter: max(var(--melc-pad), calc((100vw - var(--melc-max)) / 2)); }
+}
+.melc.melc-js .melc-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1);
+}
+.melc.melc-js .melc-reveal.melc-is-visible { opacity: 1; transform: none; }
+.melc.melc .melc-cursos { display: grid; grid-template-columns: 1fr 1fr; }
+.melc.melc .melc-curso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: clamp(1.4rem, 5vw, 2.6rem) clamp(.9rem, 4vw, 2rem) clamp(1.6rem, 5vw, 2.6rem);
+}
+.melc.melc .melc-curso--inicial { background: var(--melc-navy); color: var(--melc-blanco); }
+.melc.melc .melc-curso--completo { background: var(--melc-blanco); color: var(--melc-navy); }
+.melc.melc .melc-curso h3 { font-family: var(--melc-f-titulo); font-weight: 400; font-size: clamp(1rem, 4.4vw, 1.9rem); letter-spacing: -.02em; }
+.melc.melc .melc-curso--completo h3 { color: var(--melc-naranja); }
+.melc.melc .melc-curso ul { align-self: stretch; list-style: disc; padding-left: 1.2rem; font-family: var(--melc-f-titulo); font-size: clamp(.875rem, 3.3vw, 1.2rem); line-height: 1.15; display: grid; gap: .1rem; }
+.melc.melc .melc-curso li { display: list-item; }
+.melc.melc .melc-curso li::marker { color: currentColor; }
+.melc.melc .melc-curso__comprar {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  font-family: var(--melc-f-titulo);
+  font-size: clamp(.875rem, 3.2vw, 1.05rem);
+}
+.melc.melc .melc-curso__comprar svg { width: clamp(28px, 8vw, 40px); height: clamp(28px, 8vw, 40px); color: var(--melc-naranja); }
+.melc.melc .melc-curso__comprar span {
+  padding: .65rem clamp(1rem, 5vw, 2.2rem);
+  background: var(--melc-naranja);
+  color: var(--melc-navy);
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, .35);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.melc.melc .melc-curso__comprar:hover span { background: var(--melc-naranja-claro); transform: translateY(-2px); box-shadow: 5px 5px 0 rgba(0, 0, 0, .35); }
+@media (prefers-reduced-motion: reduce) {
+.melc.melc .melc-curso__comprar span { transition: none; }
+}
+@media (min-width: 960px) {
+.melc.melc .melc-curso { padding: 3rem 3rem 3.2rem; }
+.melc.melc .melc-curso--inicial { padding-left: var(--melc-gutter); }
+.melc.melc .melc-curso--completo { padding-right: var(--melc-gutter); }
+.melc.melc .melc-curso h3 { font-size: 2rem; }
+.melc.melc .melc-curso ul { font-size: 1.15rem; }
+}
+</style>
+
+<div class="melc" id="melc-root">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="melc-carrito" viewBox="0 0 48 48">
+    <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 6h7l5 24h22l5-17H12"/>
+      <circle cx="19" cy="40" r="3"/>
+      <circle cx="34" cy="40" r="3"/>
+    </g>
+  </symbol>
+</svg>
+
+<section class="melc-cursos" aria-label="Modalidades del curso">
+  <article class="melc-curso melc-curso--inicial melc-reveal">
+    <h3>CURSO INICIAL</h3>
+    <ul>
+      <li>CLASES GRABADAS</li>
+      <li>MODULOS</li>
+      <li>DISEÑO 2D / 3D</li>
+      <li>ENSAMBLADO</li>
+    </ul>
+    <a class="melc-curso__comprar" href="/curso/mesita-de-luz" aria-label="Comprar el curso inicial">
+      <svg aria-hidden="true"><use href="#melc-carrito"/></svg>
+      <span>Comprar</span>
+    </a>
+  </article>
+  <article class="melc-curso melc-curso--completo melc-reveal">
+    <h3>CURSO COMPLETO</h3>
+    <ul>
+      <li>CLASES GRABADAS</li>
+      <li>MODULOS</li>
+      <li>DISEÑO 2D / 3D</li>
+      <li>ENSAMBLADO</li>
+      <li>ASESORÍAS PERSONALIZADAS</li>
+    </ul>
+    <a class="melc-curso__comprar" href="/curso/curso-inicial-nivel-1-mesita-de-luz-con-asesoria" aria-label="Comprar el curso completo">
+      <svg aria-hidden="true"><use href="#melc-carrito"/></svg>
+      <span>Comprar</span>
+    </a>
+  </article>
+</section>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+  try {
+    var root = document.getElementById("melc-root");
+    if (!root || root.dataset.fitInit) return;
+    root.dataset.fitInit = "1";
+
+    var fit = function () {
+      var sbw = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+      root.style.setProperty("--melc-sbw", sbw + "px");
+    };
+    fit();
+
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(fit).observe(document.documentElement);
+    } else {
+      window.addEventListener("resize", fit, { passive: true });
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+  try {
+  var root = document.getElementById("melc-root");
+  if (!root || root.dataset.motionInit) return;
+  root.dataset.motionInit = "1";
+
+  var els = root.querySelectorAll(".melc-reveal");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  root.classList.add("melc-js");
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("melc-is-visible");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+  els.forEach(function (el) { io.observe(el); });
+
+  setTimeout(function () {
+    els.forEach(function (el) { el.classList.add("melc-is-visible"); });
+  }, 4000);
+  } catch (e) {}
+})();
+</script>
+</div></div></div>
+<div class="page-section uk-section uk-padding-remove-vertical uk-section-muted"><div class="uk-container uk-width-5-6@l"><div class="uk-width-1-1 custom-code-container"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Archivo+Narrow:wght@700&display=swap">
+<style>
+.melf,
+.melf.melf *,
+.melf.melf *::before,
+.melf.melf *::after { box-sizing: border-box; }
+.melf {
+  --melf-naranja: #f3792d;
+  --melf-naranja-claro: #ff8e45;
+  --melf-navy: #1b2128;
+  --melf-crema: #f2eddd;
+  --melf-blanco: #ffffff;
+  --melf-gris-btn: #4a4a48;
+  --melf-f-titulo: "Archivo Black", "Arial Black", Impact, sans-serif;
+  --melf-f-texto: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
+  --melf-f-slab: "Alfa Slab One", Georgia, serif;
+  --melf-pad: clamp(1.25rem, 6vw, 3rem);
+  --melf-max: 1180px;
+  --melf-gutter: var(--melf-pad);
+
+  background: var(--melf-navy);
+  color: var(--melf-blanco);
+  font-family: var(--melf-f-texto);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw + var(--melf-sbw, 0px) / 2);
+  margin-right: calc(50% - 50vw + var(--melf-sbw, 0px) / 2);
+  overflow: hidden;
+  overflow-x: hidden;
+}
+.melf.melf img,
+.melf.melf video,
+.melf.melf svg { display: block; max-width: 100%; }
+.melf.melf h1,
+.melf.melf h2,
+.melf.melf h3,
+.melf.melf p,
+.melf.melf figure,
+.melf.melf ul { margin: 0; padding: 0; }
+.melf.melf ul { list-style: none; }
+.melf.melf h1,
+.melf.melf h2,
+.melf.melf h3 {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  color: inherit;
+}
+.melf.melf a,
+.melf.melf a:hover,
+.melf.melf a:focus { color: inherit; text-decoration: none; }
+.melf.melf a:not(.melf-uk-button),
+.melf.melf a:not(.melf-uk-button):hover,
+.melf.melf a:not(.melf-uk-button):focus { text-decoration: none !important; }
+.melf.melf a:focus-visible { outline: 3px solid var(--melf-naranja); outline-offset: 4px; }
+@media (min-width: 960px) {
+.melf { --melf-gutter: max(var(--melf-pad), calc((100vw - var(--melf-max)) / 2)); }
+}
+.melf.melf .melf-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: .9rem 2rem;
+  background: var(--melf-blanco);
+  color: var(--melf-gris-btn);
+  border: 2px solid #000;
+  border-radius: 22px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, .22);
+  font-family: var(--melf-f-titulo);
+  font-size: clamp(1rem, 4.2vw, 1.25rem);
+  letter-spacing: -.01em;
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.melf.melf a.melf-btn-pill:hover {
+  color: var(--melf-gris-btn);
+  transform: translate(-2px, -2px);
+  box-shadow: 11px 11px 0 rgba(0, 0, 0, .25);
+  background: var(--melf-crema);
+}
+.melf.melf .melf-btn-pill:active { transform: translate(4px, 4px); box-shadow: 3px 3px 0 rgba(0, 0, 0, .25); }
+@media (prefers-reduced-motion: reduce) {
+.melf.melf .melf-btn-pill { transition: none; }
+}
+.melf.melf-js .melf-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1);
+}
+.melf.melf-js .melf-reveal.melf-is-visible { opacity: 1; transform: none; }
+.melf.melf .melf-pie { background: var(--melf-navy); color: var(--melf-blanco); text-align: center; overflow: hidden; }
+.melf.melf .melf-pie__cinta {
+  background: var(--melf-naranja);
+  color: var(--melf-navy);
+  overflow: hidden;
+  padding: .85rem 0;
+  width: 104%;
+  margin: clamp(1.25rem, 4vw, 2rem) -2% 0;
+  transform: rotate(-1.3deg);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, .25);
+}
+.melf.melf .melf-pie__pista {
+  display: flex;
+  width: max-content;
+  animation: melf-marquee 45s linear infinite;
+}
+.melf.melf .melf-pie__cinta:hover .melf-pie__pista { animation-play-state: paused; }
+.melf.melf .melf-pie__item {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  padding: 0 1.1rem;
+  white-space: nowrap;
+  font-family: var(--melf-f-titulo);
+  font-size: clamp(1rem, 3.4vw, 1.5rem);
+  letter-spacing: -.01em;
+}
+.melf.melf .melf-pie__item svg { width: 1.1em; height: 1.1em; flex: none; }
+@keyframes melf-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.melf.melf .melf-pie__cuerpo {
+  max-width: var(--melf-max);
+  margin: 0 auto;
+  padding: clamp(2rem, 7vw, 4rem) var(--melf-pad) clamp(2rem, 6vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 1.6rem);
+}
+.melf.melf .melf-pie__firma { font-family: var(--melf-f-titulo); font-size: .875rem; line-height: 1; color: var(--melf-blanco); }
+.melf.melf .melf-pie__firma span { color: var(--melf-naranja); }
+.melf.melf .melf-pie__marca {
+  font-family: var(--melf-f-titulo);
+  font-size: clamp(2.2rem, 13.4vw, 9rem);
+  line-height: .9;
+  letter-spacing: -.045em;
+  white-space: nowrap;
+  color: var(--melf-naranja);
+  margin-top: -.6rem;
+}
+.melf.melf .melf-pie__frase {
+  max-width: 30ch;
+  font-family: var(--melf-f-titulo);
+  font-size: clamp(1rem, 3.8vw, 1.6rem);
+  line-height: 1.25;
+  color: var(--melf-crema);
+}
+.melf.melf .melf-pie__frase em {
+  font-style: normal;
+  background: var(--melf-naranja);
+  color: var(--melf-navy);
+  padding: 0 .25em;
+  white-space: nowrap;
+}
+.melf.melf .melf-pie .melf-btn-pill { margin-top: .5rem; }
+.melf.melf .melf-pie__iconos { display: flex; align-items: center; justify-content: center; gap: 1.1rem; margin-top: .5rem; }
+.melf.melf .melf-pie__iconos a { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; transition: transform .2s ease; }
+.melf.melf .melf-pie__iconos a:hover { transform: translateY(-3px) scale(1.06); }
+.melf.melf .melf-pie__iconos svg { width: 48px; height: 48px; }
+.melf.melf .melf-pie__mail { background: #0b6bff; color: #fff; }
+.melf.melf .melf-pie__mail svg { width: 26px; height: 26px; }
+@media (prefers-reduced-motion: reduce) {
+.melf.melf .melf-pie__pista { animation: none; }
+.melf.melf .melf-pie__cinta { transform: none; }
+.melf.melf .melf-pie__iconos a { transition: none; }
+}
+@media (min-width: 960px) {
+.melf.melf .melf-pie__cinta { padding: 1rem 0; }
+.melf.melf .melf-pie__frase { font-size: 1.6rem; max-width: 40ch; }
+}
+</style>
+
+<div class="melf" id="melf-root">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="melf-ig" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#feda75"/>
+      <stop offset=".3" stop-color="#fa7e1e"/>
+      <stop offset=".55" stop-color="#d62976"/>
+      <stop offset=".8" stop-color="#962fbf"/>
+      <stop offset="1" stop-color="#4f5bd5"/>
+    </linearGradient>
+  </defs>
+  <symbol id="melf-asterisco" viewBox="0 0 48 48">
+    <g fill="currentColor">
+      <rect x="20" y="2" width="8" height="44" rx="4"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(45 24 24)"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(90 24 24)"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(135 24 24)"/>
+    </g>
+  </symbol>
+  <symbol id="melf-mail" viewBox="0 0 48 48">
+    <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M8 12h32a2 2 0 0 1 2 2v20a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2zm-1 3 17 13L41 15"/>
+  </symbol>
+  <symbol id="melf-instagram" viewBox="0 0 48 48">
+    <rect width="48" height="48" rx="12" fill="url(#melf-ig)"/>
+    <rect x="12" y="12" width="24" height="24" rx="7" fill="none" stroke="#fff" stroke-width="3"/>
+    <circle cx="24" cy="24" r="6" fill="none" stroke="#fff" stroke-width="3"/>
+    <circle cx="31.5" cy="16.5" r="1.8" fill="#fff"/>
+  </symbol>
+</svg>
+
+<footer class="melf-pie">
+  <div class="melf-pie__cinta" aria-hidden="true">
+    <div class="melf-pie__pista"><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>CLASES GRABADAS</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>ASESORÍAS PERSONALIZADAS</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>DISEÑO 2D / 3D</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>ENSAMBLADO</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>CLASES GRABADAS</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>ASESORÍAS PERSONALIZADAS</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>DISEÑO 2D / 3D</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>ENSAMBLADO</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>CLASES GRABADAS</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>ASESORÍAS PERSONALIZADAS</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>DISEÑO 2D / 3D</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>ENSAMBLADO</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>CLASES GRABADAS</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>ASESORÍAS PERSONALIZADAS</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>DISEÑO 2D / 3D</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>ENSAMBLADO</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>CLASES GRABADAS</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>ASESORÍAS PERSONALIZADAS</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>DISEÑO 2D / 3D</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>ENSAMBLADO</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>CLASES GRABADAS</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>ASESORÍAS PERSONALIZADAS</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>DISEÑO 2D / 3D</span><span class="melf-pie__item"><svg aria-hidden="true"><use href="#melf-asterisco"/></svg>ENSAMBLADO</span></div>
+  </div>
+
+  <div class="melf-pie__cuerpo melf-reveal">
+    <p class="melf-pie__firma"><span>NICOLAS</span> SOTO</p>
+    <p class="melf-pie__marca">MELAMINICO</p>
+    <p class="melf-pie__frase">NO HAY NADA MÁS LINDO QUE UN MUEBLE <em>HECHO POR VOS</em> EN TU HOGAR.</p>
+    <a class="melf-btn-pill" href="/c">VER LOS CURSOS</a>
+    <div class="melf-pie__iconos">
+      <a class="melf-pie__instagram" href="https://www.instagram.com/_melaminico/" target="_blank" rel="noopener" aria-label="Instagram de Melamínico"><svg aria-hidden="true"><use href="#melf-instagram"/></svg></a>
+      <a class="melf-pie__mail" href="mailto:adn.melaminico@gmail.com" aria-label="Escribinos por mail"><svg aria-hidden="true"><use href="#melf-mail"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+  try {
+    var root = document.getElementById("melf-root");
+    if (!root || root.dataset.fitInit) return;
+    root.dataset.fitInit = "1";
+
+    var fit = function () {
+      var sbw = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+      root.style.setProperty("--melf-sbw", sbw + "px");
+    };
+    fit();
+
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(fit).observe(document.documentElement);
+    } else {
+      window.addEventListener("resize", fit, { passive: true });
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+  try {
+  var root = document.getElementById("melf-root");
+  if (!root || root.dataset.motionInit) return;
+  root.dataset.motionInit = "1";
+
+  var els = root.querySelectorAll(".melf-reveal");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  root.classList.add("melf-js");
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("melf-is-visible");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+  els.forEach(function (el) { io.observe(el); });
+
+  setTimeout(function () {
+    els.forEach(function (el) { el.classList.add("melf-is-visible"); });
+  }, 4000);
+  } catch (e) {}
+})();
+</script>
+</div></div></div></div><script>var s=location.hash.slice(1)||"muted";document.querySelectorAll(".custom-code-container").forEach(function(c){var e=c.closest(".page-section");e.className=e.className.replace(/uk-section-\w+/,"uk-section-"+s);});</script></body></html>

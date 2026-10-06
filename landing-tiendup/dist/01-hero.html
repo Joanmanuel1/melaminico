@@ -1,0 +1,378 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Archivo+Narrow:wght@700&display=swap">
+<style>
+.melh,
+.melh.melh *,
+.melh.melh *::before,
+.melh.melh *::after { box-sizing: border-box; }
+.melh {
+  --melh-naranja: #f3792d;
+  --melh-naranja-claro: #ff8e45;
+  --melh-navy: #1b2128;
+  --melh-crema: #f2eddd;
+  --melh-blanco: #ffffff;
+  --melh-gris-btn: #4a4a48;
+  --melh-f-titulo: "Archivo Black", "Arial Black", Impact, sans-serif;
+  --melh-f-texto: "Archivo Narrow", "Arial Narrow", Arial, sans-serif;
+  --melh-f-slab: "Alfa Slab One", Georgia, serif;
+  --melh-pad: clamp(1.25rem, 6vw, 3rem);
+  --melh-max: 1180px;
+  --melh-gutter: var(--melh-pad);
+
+  background: var(--melh-navy);
+  color: var(--melh-blanco);
+  font-family: var(--melh-f-texto);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw + var(--melh-sbw, 0px) / 2);
+  margin-right: calc(50% - 50vw + var(--melh-sbw, 0px) / 2);
+  overflow: hidden;
+  overflow-x: hidden;
+}
+.melh.melh img,
+.melh.melh video,
+.melh.melh svg { display: block; max-width: 100%; }
+.melh.melh h1,
+.melh.melh h2,
+.melh.melh h3,
+.melh.melh p,
+.melh.melh figure,
+.melh.melh ul { margin: 0; padding: 0; }
+.melh.melh ul { list-style: none; }
+.melh.melh h1,
+.melh.melh h2,
+.melh.melh h3 {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  color: inherit;
+}
+.melh.melh a,
+.melh.melh a:hover,
+.melh.melh a:focus { color: inherit; text-decoration: none; }
+.melh.melh a:not(.melh-uk-button),
+.melh.melh a:not(.melh-uk-button):hover,
+.melh.melh a:not(.melh-uk-button):focus { text-decoration: none !important; }
+.melh.melh a:focus-visible { outline: 3px solid var(--melh-naranja); outline-offset: 4px; }
+@media (min-width: 960px) {
+.melh { --melh-gutter: max(var(--melh-pad), calc((100vw - var(--melh-max)) / 2)); }
+}
+.melh.melh .melh-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: .9rem 2rem;
+  background: var(--melh-blanco);
+  color: var(--melh-gris-btn);
+  border: 2px solid #000;
+  border-radius: 22px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, .22);
+  font-family: var(--melh-f-titulo);
+  font-size: clamp(1rem, 4.2vw, 1.25rem);
+  letter-spacing: -.01em;
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.melh.melh a.melh-btn-pill:hover {
+  color: var(--melh-gris-btn);
+  transform: translate(-2px, -2px);
+  box-shadow: 11px 11px 0 rgba(0, 0, 0, .25);
+  background: var(--melh-crema);
+}
+.melh.melh .melh-btn-pill:active { transform: translate(4px, 4px); box-shadow: 3px 3px 0 rgba(0, 0, 0, .25); }
+@media (prefers-reduced-motion: reduce) {
+.melh.melh .melh-btn-pill { transition: none; }
+}
+.melh.melh-js .melh-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1);
+}
+.melh.melh-js .melh-reveal.melh-is-visible { opacity: 1; transform: none; }
+.melh.melh .melh-hero {
+  position: relative;
+  min-height: clamp(560px, 74svh, 700px);
+  padding: 1.5rem var(--melh-pad) 0;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+}
+.melh.melh .melh-hero__bg {
+  position: absolute;
+  inset: -20px;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(27, 33, 40, .15) 0%, rgba(27, 33, 40, .55) 100%),
+    url("https://bu-cdn.tiendup.com/business/91976/themes/lite/assets/img/o_1k44gp97e1ecgc7m1356c1ntdp24.jpg") center / cover;
+  filter: blur(9px) saturate(.7);
+}
+.melh.melh .melh-hero__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: var(--melh-max);
+  width: 100%;
+  margin: 0 auto;
+}
+.melh.melh .melh-hero__martillo { width: clamp(64px, 18vw, 110px); aspect-ratio: 120 / 140; color: #000; transform: rotate(40deg); }
+.melh.melh .melh-hero__logo { width: clamp(120px, 34vw, 190px); height: auto; margin-top: .5rem; filter: drop-shadow(0 1px 0 rgba(255, 255, 255, .5)); }
+.melh.melh .melh-hero__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.1rem;
+  max-width: var(--melh-max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 0 1.75rem;
+}
+.melh.melh .melh-hero__firma {
+  align-self: flex-start;
+  font-family: var(--melh-f-titulo);
+  font-size: clamp(.875rem, 3vw, 1rem);
+  color: var(--melh-blanco);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .5);
+  line-height: 1;
+}
+.melh.melh .melh-hero__firma span { color: var(--melh-naranja); }
+.melh.melh .melh-hero__marca {
+  font-family: var(--melh-f-titulo);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 13.4vw, 9rem);
+  line-height: .9;
+  letter-spacing: -.045em;
+  color: var(--melh-naranja);
+  margin-top: -.9rem;
+  text-shadow: 0 6px 30px rgba(0, 0, 0, .25);
+}
+.melh.melh .melh-hero__curso {
+  font-family: var(--melh-f-titulo);
+  font-size: clamp(1.9rem, 8.6vw, 4rem);
+  letter-spacing: -.03em;
+  line-height: 1;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, .4);
+  margin-top: 1rem;
+}
+.melh.melh .melh-hero__lema {
+  max-width: 27ch;
+  font-size: clamp(1.15rem, 4.8vw, 1.9rem);
+  line-height: 1.12;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .5);
+}
+.melh.melh .melh-hero__lema em { display: block; font-style: normal; color: var(--melh-naranja-claro); }
+.melh.melh .melh-hero__sub {
+  font-family: var(--melh-f-titulo);
+  font-size: clamp(.95rem, 3.8vw, 1.3rem);
+  letter-spacing: .01em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .5);
+}
+.melh.melh .melh-hero__body .melh-btn-pill { margin-top: 1rem; }
+.melh.melh .melh-hero__laptop { width: clamp(150px, 42vw, 260px); height: auto; margin-top: 1.5rem; }
+.melh.melh .melh-franja {
+  margin: 0 calc(var(--melh-pad) * -1);
+  padding: clamp(1rem, 3.5vw, 1.5rem) var(--melh-pad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  background: rgba(27, 33, 40, .58);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, .2);
+}
+.melh.melh .melh-franja__col { width: 100%; max-width: 640px; display: flex; flex-direction: column; align-items: center; gap: .75rem; }
+.melh.melh .melh-franja__col--faq { padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, .22); }
+.melh.melh .melh-franja__titulo {
+  font-family: var(--melh-f-titulo);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 5.4vw, 1.9rem);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  color: var(--melh-blanco);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .45);
+  text-wrap: balance;
+}
+.melh.melh .melh-franja__titulo span {
+  display: inline-block;
+  background: var(--melh-naranja);
+  color: var(--melh-navy);
+  padding: 0 .18em;
+  border-radius: 6px;
+  text-shadow: none;
+  transform: rotate(-2deg);
+}
+.melh.melh .melh-franja__lista {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  text-align: left;
+  font-family: var(--melh-f-titulo);
+  font-size: clamp(.875rem, 3.6vw, 1rem);
+  line-height: 1.25;
+  color: var(--melh-blanco);
+}
+.melh.melh .melh-franja__lista li { display: flex; align-items: flex-start; gap: .55rem; }
+.melh.melh .melh-franja__lista svg { width: 1.1rem; height: 1.1rem; color: var(--melh-naranja); flex: none; margin-top: .08rem; }
+.melh.melh .melh-franja__pregunta {
+  font-family: var(--melh-f-titulo);
+  font-weight: 400;
+  font-size: clamp(.95rem, 3.8vw, 1.1rem);
+  line-height: 1.25;
+  color: var(--melh-blanco);
+}
+.melh.melh .melh-franja__respuesta {
+  font-size: clamp(1rem, 3.9vw, 1.15rem);
+  line-height: 1.3;
+  color: var(--melh-crema);
+}
+@media (min-width: 960px) {
+.melh.melh .melh-hero__body {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    grid-template-areas: "firma laptop" "marca laptop" "curso laptop" "lema laptop" "sub laptop" "btn laptop";
+    align-content: center;
+    text-align: left;
+    justify-items: start;
+    column-gap: 4rem;
+    row-gap: 1rem;
+  }
+.melh.melh .melh-hero__firma { grid-area: firma; align-self: end; }
+.melh.melh .melh-hero__marca { grid-area: marca; margin-top: 0; font-size: min(6.1vw, 5.6rem); white-space: nowrap; }
+.melh.melh .melh-hero__curso { grid-area: curso; font-size: clamp(2.4rem, 4.4vw, 4rem); margin-top: .5rem; white-space: nowrap; }
+.melh.melh .melh-hero__lema { grid-area: lema; max-width: none; font-size: 1.7rem; }
+.melh.melh .melh-hero__sub { grid-area: sub; }
+.melh.melh .melh-hero__body .melh-btn-pill { grid-area: btn; }
+.melh.melh .melh-hero__laptop { grid-area: laptop; justify-self: center; align-self: center; width: min(100%, 420px); margin: 0; }
+.melh.melh .melh-hero__body > * { min-width: 0; }
+.melh.melh .melh-franja { flex-direction: row; align-items: center; justify-content: center; gap: 0; padding-left: var(--melh-gutter); padding-right: var(--melh-gutter); }
+.melh.melh .melh-franja__col { flex: 1 1 0; max-width: none; align-items: flex-start; text-align: left; padding: 0 2.25rem; }
+.melh.melh .melh-franja__col:first-child { padding-left: 0; }
+.melh.melh .melh-franja__col--faq { padding-top: 0; padding-right: 0; border-top: 0; border-left: 1px solid rgba(255, 255, 255, .25); }
+.melh.melh .melh-franja__titulo { font-size: 1.6rem; }
+.melh.melh .melh-franja__lista { font-size: .95rem; }
+.melh.melh .melh-franja__pregunta { font-size: 1.05rem; }
+.melh.melh .melh-franja__respuesta { font-size: 1.1rem; }
+}
+</style>
+
+<div class="melh" id="melh-root">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="melh-martillo" viewBox="0 0 120 140">
+    <g fill="currentColor">
+      <rect x="51" y="36" width="18" height="100" rx="9"/>
+      <path d="M44 20h30v24H44z"/>
+      <path d="M74 14h32a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H74z"/>
+      <path d="M44 20C34 12 18 12 6 22c-1 1 0 3 1 3 10-5 22-4 37 8z"/>
+    </g>
+  </symbol>
+  <symbol id="melh-asterisco" viewBox="0 0 48 48">
+    <g fill="currentColor">
+      <rect x="20" y="2" width="8" height="44" rx="4"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(45 24 24)"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(90 24 24)"/>
+      <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(135 24 24)"/>
+    </g>
+  </symbol>
+</svg>
+
+<header class="melh-hero">
+  <div class="melh-hero__bg" aria-hidden="true"></div>
+  <div class="melh-hero__top">
+    <svg class="melh-hero__martillo" aria-hidden="true"><use href="#melh-martillo"/></svg>
+    <img class="melh-hero__logo" src="https://bu-cdn.tiendup.com/business/91976/themes/lite/assets/img/o_1k44g6io712dr1dgbd4fktc94t29.png" alt="Melamínico" width="367" height="74">
+  </div>
+  <div class="melh-hero__body melh-reveal">
+    <p class="melh-hero__firma"><span>NICOLAS</span> SOTO</p>
+    <h2 class="melh-hero__marca">MELAMINICO</h2>
+    <p class="melh-hero__curso">CURSO 100% ONLINE</p>
+    <p class="melh-hero__lema">
+      LA FORMA MÁS COMODA PARA APRENDER
+      <em>CARPINTERÍA DESDE TU CASA.</em>
+    </p>
+    <p class="melh-hero__sub">CREA TU MUEBLE DESDE CERO</p>
+    <a class="melh-btn-pill" href="/c">¡QUIERO EMPEZAR YA!</a>
+    <img class="melh-hero__laptop" src="https://bu-cdn.tiendup.com/business/91976/themes/lite/assets/img/o_1k44gmu3gg73u8jmvjpfgn1k1k.png" alt="" width="700" height="757">
+  </div>
+  <div class="melh-franja melh-reveal">
+    <div class="melh-franja__col">
+      <h2 class="melh-franja__titulo">ESTE CURSO ES PARA <span>VOS</span> SI:</h2>
+      <ul class="melh-franja__lista">
+        <li><svg aria-hidden="true"><use href="#melh-asterisco"/></svg>Querés crear un mueble único y de calidad a un muy bajo costo</li>
+        <li><svg aria-hidden="true"><use href="#melh-asterisco"/></svg>Querés fabricar un mueble para venderlo y generar ingresos</li>
+      </ul>
+    </div>
+    <div class="melh-franja__col melh-franja__col--faq">
+      <h3 class="melh-franja__pregunta">¿Necesito tener herramientas industriales o tener experiencia previa?</h3>
+      <p class="melh-franja__respuesta">No, no necesitás nada de eso: con solo algunas herramientas súper básicas vas a aprender a crear tu mueble sin necesidad de experiencia previa.</p>
+    </div>
+  </div>
+</header>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+  try {
+    var root = document.getElementById("melh-root");
+    if (!root || root.dataset.fitInit) return;
+    root.dataset.fitInit = "1";
+
+    var fit = function () {
+      var sbw = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+      root.style.setProperty("--melh-sbw", sbw + "px");
+    };
+    fit();
+
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(fit).observe(document.documentElement);
+    } else {
+      window.addEventListener("resize", fit, { passive: true });
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+  try {
+  var root = document.getElementById("melh-root");
+  if (!root || root.dataset.motionInit) return;
+  root.dataset.motionInit = "1";
+
+  var els = root.querySelectorAll(".melh-reveal");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  root.classList.add("melh-js");
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("melh-is-visible");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+  els.forEach(function (el) { io.observe(el); });
+
+  setTimeout(function () {
+    els.forEach(function (el) { el.classList.add("melh-is-visible"); });
+  }, 4000);
+  } catch (e) {}
+})();
+</script>

@@ -1,0 +1,7 @@
+.foto { position: relative; overflow: hidden; background: var(--navy); }
+.foto img { width: 100%; height: 100%; object-fit: cover; }
+.foto figcaption { position: absolute; }
+
+@media (min-width: 960px) {
+  .foto img { position: absolute; inset: 0; }
+}

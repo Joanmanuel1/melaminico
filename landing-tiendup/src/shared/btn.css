@@ -1,0 +1,28 @@
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: .9rem 2rem;
+  background: var(--blanco);
+  color: var(--gris-btn);
+  border: 2px solid #000;
+  border-radius: 22px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, .22);
+  font-family: var(--f-titulo);
+  font-size: clamp(1rem, 4.2vw, 1.25rem);
+  letter-spacing: -.01em;
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+a.btn-pill:hover {
+  color: var(--gris-btn);
+  transform: translate(-2px, -2px);
+  box-shadow: 11px 11px 0 rgba(0, 0, 0, .25);
+  background: var(--crema);
+}
+.btn-pill:active { transform: translate(4px, 4px); box-shadow: 3px 3px 0 rgba(0, 0, 0, .25); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-pill { transition: none; }
+}

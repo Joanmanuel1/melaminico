@@ -1,0 +1,22 @@
+.chips { display: grid; grid-template-columns: 1fr 1fr; }
+.chip {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  min-height: clamp(64px, 17vw, 96px);
+  padding: .75rem clamp(.8rem, 3vw, 1.5rem);
+  font-family: var(--f-titulo);
+  font-size: clamp(.875rem, 3.3vw, 1.1rem);
+  line-height: 1.12;
+  text-transform: uppercase;
+}
+.chip svg { flex: none; width: clamp(24px, 6.5vw, 40px); height: clamp(24px, 6.5vw, 40px); color: var(--naranja); }
+.chip--navy { background: var(--navy); color: var(--blanco); justify-content: flex-end; text-align: right; }
+.chip--blanco { background: var(--blanco); color: var(--naranja); }
+.chip--navy:has(svg:first-child) { justify-content: flex-start; text-align: left; }
+.chip--blanco:has(span:first-child) { justify-content: flex-end; text-align: right; }
+
+@media (min-width: 960px) {
+  .chip { font-size: 1rem; min-height: 96px; }
+  .chip:nth-child(even) { padding-right: calc(var(--gutter) * .5); }
+}

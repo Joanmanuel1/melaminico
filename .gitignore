@@ -1,0 +1,7 @@
+# Solo se publican los archivos finales para el cliente
+/*
+!/.gitignore
+!/README.md
+!/diseño/
+!/imagenes/
+!/landing-tiendup/
