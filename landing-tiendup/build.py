@@ -107,7 +107,9 @@ def build(local):
 
     def img(name):
         if local:
-            return "../landing-demo/assets/" + str(ASSETS[name][0].relative_to(DEMO))
+            if DEMO.exists():
+                return "../landing-demo/assets/" + str(ASSETS[name][0].relative_to(DEMO))
+            return "subir/" + ASSETS[name][1]
         if not urls.get(name):
             errors.append(f"falta la URL de '{name}' en urls.json")
             return ""
@@ -190,13 +192,13 @@ def build(local):
         (out_dir / f"{name}.html").write_text(block, encoding="utf-8")
         results[name] = len(block)
 
-    if not local:
+    if not local and DEMO.exists():
         subir = ROOT / "subir"
         if subir.exists():
             shutil.rmtree(subir)
         subir.mkdir()
     for k, (src, dst) in ASSETS.items():
-        if not local:
+        if not local and DEMO.exists():
             shutil.copy(src, ROOT / "subir" / dst)
 
     if local or not errors:
