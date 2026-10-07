@@ -118,7 +118,7 @@ Tiendup no permite referenciar imágenes desde este repositorio: tienen que esta
 
 1. En el editor de Tiendup, agregá una sección temporal de tipo "Imágenes" y subí la imagen.
 2. Abrí la página pública, hacé clic derecho sobre la imagen y elegí **"Copiar dirección de imagen"**.
-3. Pegá esa dirección en `urls.json`, en la clave correspondiente (`logo`, `laptop`, `taller`, etc.).
+3. Pegá esa dirección en `urls.json`, en la clave correspondiente (`logo`, `taller`, `boceto`, etc.).
 4. Borrá la sección temporal, corré `python3 build.py` y volvé a pegar el bloque que usa esa imagen.
 
 ---

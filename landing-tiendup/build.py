@@ -18,7 +18,6 @@ SECTIONS = [
 
 ASSETS = {
     "logo": (DEMO / "img/logo.png", "01-logo.png"),
-    "laptop": (DEMO / "img/laptop.png", "02-laptop.png"),
     "dormitorio": (DEMO / "img/mueble-dormitorio.jpg", "03-dormitorio.jpg"),
     "boceto": (DEMO / "img/foto-3882.jpg", "04-boceto.jpg"),
     "paso": (DEMO / "img/foto-3859.jpg", "05-paso.jpg"),
@@ -149,9 +148,18 @@ def build(local):
         if "reveal" in js_parts:
             css += "\n" + read("shared/reveal.css")
         css += "\n" + read(f"{name}.css")
+        visual = cfg.get("hero_visual", "ninguno") if name == "01-hero" else ""
+        if name == "01-hero":
+            if visual not in ("celular", "sello", "ninguno"):
+                errors.append(f"hero_visual '{visual}' no válido (usar celular, sello o ninguno)")
+                visual = "ninguno"
+            if visual != "ninguno":
+                css += "\n" + read(f"hero-visual/{visual}.css")
         css = prefix_vars(process_css(css, p), p)
 
         html = read(f"{name}.html")
+        if name == "01-hero":
+            html = html.replace("[[hero-visual]]", read(f"hero-visual/{visual}.html").rstrip("\n") if visual != "ninguno" else "")
         if name == "04-armado":
             poster = '<img class="__P__-armado__video" src="[[img:armado-poster]]" alt="" aria-hidden="true">'
             if yt_id:

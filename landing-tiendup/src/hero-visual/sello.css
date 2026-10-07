@@ -1,0 +1,15 @@
+.sello { width: clamp(200px, 56vw, 240px); margin-top: 1.5rem; }
+.sello svg { display: block; width: 100%; height: auto; overflow: visible; }
+.sello__fondo { fill: var(--naranja); }
+.sello__borde { fill: none; stroke: var(--navy); stroke-width: 3; }
+.sello__anillo text { font-family: var(--f-titulo); font-size: 14px; fill: var(--navy); letter-spacing: 0; }
+.sello__anillo { transform-origin: 100px 100px; animation: __P__-giro 60s linear infinite; }
+.sello__cien { font-family: var(--f-titulo); font-size: 30px; fill: var(--navy); }
+.sello__online { font-family: var(--f-titulo); font-size: 17px; fill: var(--navy); letter-spacing: .04em; }
+@keyframes __P__-giro { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .sello__anillo { animation: none; }
+}
+@media (min-width: 960px) {
+  .sello { grid-area: visual; justify-self: center; align-self: center; width: min(100%, 340px); margin: 0; }
+}

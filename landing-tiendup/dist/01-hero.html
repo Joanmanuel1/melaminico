@@ -178,22 +178,19 @@
   text-shadow: 0 2px 12px rgba(0, 0, 0, .5);
 }
 .melh.melh .melh-hero__body .melh-btn-pill { margin-top: 1rem; }
-.melh.melh .melh-hero__laptop { width: clamp(150px, 42vw, 260px); height: auto; margin-top: 1.5rem; }
 .melh.melh .melh-franja {
   margin: 0 calc(var(--melh-pad) * -1);
   padding: clamp(1rem, 3.5vw, 1.5rem) var(--melh-pad);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: .9rem;
   text-align: center;
   background: rgba(27, 33, 40, .58);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, .2);
 }
-.melh.melh .melh-franja__col { width: 100%; max-width: 640px; display: flex; flex-direction: column; align-items: center; gap: .75rem; }
-.melh.melh .melh-franja__col--faq { padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, .22); }
 .melh.melh .melh-franja__titulo {
   font-family: var(--melh-f-titulo);
   font-weight: 400;
@@ -225,24 +222,11 @@
 }
 .melh.melh .melh-franja__lista li { display: flex; align-items: flex-start; gap: .55rem; }
 .melh.melh .melh-franja__lista svg { width: 1.1rem; height: 1.1rem; color: var(--melh-naranja); flex: none; margin-top: .08rem; }
-.melh.melh .melh-franja__pregunta {
-  text-wrap: balance;
-  font-family: var(--melh-f-titulo);
-  font-weight: 400;
-  font-size: clamp(.95rem, 3.8vw, 1.1rem);
-  line-height: 1.25;
-  color: var(--melh-blanco);
-}
-.melh.melh .melh-franja__respuesta {
-  font-size: clamp(1rem, 3.9vw, 1.15rem);
-  line-height: 1.3;
-  color: var(--melh-crema);
-}
 @media (min-width: 960px) {
 .melh.melh .melh-hero__body {
     display: grid;
     grid-template-columns: 1.15fr .85fr;
-    grid-template-areas: "firma laptop" "marca laptop" "curso laptop" "lema laptop" "sub laptop" "btn laptop";
+    grid-template-areas: "firma visual" "marca visual" "curso visual" "lema visual" "sub visual" "btn visual";
     align-content: center;
     text-align: left;
     justify-items: start;
@@ -255,16 +239,10 @@
 .melh.melh .melh-hero__lema { grid-area: lema; max-width: none; font-size: 1.7rem; }
 .melh.melh .melh-hero__sub { grid-area: sub; }
 .melh.melh .melh-hero__body .melh-btn-pill { grid-area: btn; }
-.melh.melh .melh-hero__laptop { grid-area: laptop; justify-self: center; align-self: center; width: min(100%, 420px); margin: 0; }
 .melh.melh .melh-hero__body > * { min-width: 0; }
 .melh.melh .melh-franja { flex-direction: row; align-items: center; justify-content: center; gap: 0; padding-left: max(var(--melh-pad), calc((100vw - 1320px) / 2)); padding-right: max(var(--melh-pad), calc((100vw - 1320px) / 2)); }
-.melh.melh .melh-franja__col { flex: 1 1 0; max-width: none; align-items: flex-start; text-align: left; padding: 0 2rem; }
-.melh.melh .melh-franja__col:first-child { padding-left: 0; }
-.melh.melh .melh-franja__col--faq { padding-top: 0; padding-right: 0; border-top: 0; border-left: 1px solid rgba(255, 255, 255, .25); }
-.melh.melh .melh-franja__titulo { font-size: 1.6rem; }
-.melh.melh .melh-franja__lista { font-size: .95rem; }
-.melh.melh .melh-franja__pregunta { font-size: .98rem; text-wrap: balance; }
-.melh.melh .melh-franja__respuesta { font-size: 1.1rem; }
+.melh.melh .melh-franja__titulo { flex: 1 1 0; text-align: left; padding-right: 2rem; font-size: 1.6rem; }
+.melh.melh .melh-franja__lista { flex: 1 1 0; padding-left: 2rem; border-left: 1px solid rgba(255, 255, 255, .25); font-size: .95rem; }
 }
 </style>
 
@@ -304,20 +282,14 @@
     </p>
     <p class="melh-hero__sub">CREA TU MUEBLE DESDE CERO</p>
     <a class="melh-btn-pill" href="/c">¡QUIERO EMPEZAR YA!</a>
-    <img class="melh-hero__laptop" src="https://bu-cdn.tiendup.com/business/91976/themes/lite/assets/img/o_1k44gmu3gg73u8jmvjpfgn1k1k.png" alt="" width="700" height="757">
+    
   </div>
   <div class="melh-franja melh-reveal">
-    <div class="melh-franja__col">
-      <h2 class="melh-franja__titulo">ESTE CURSO ES PARA <span>VOS</span> SI:</h2>
-      <ul class="melh-franja__lista">
-        <li><svg aria-hidden="true"><use href="#melh-asterisco"/></svg>Querés crear un mueble único y de calidad a un muy bajo costo</li>
-        <li><svg aria-hidden="true"><use href="#melh-asterisco"/></svg>Querés fabricar un mueble para venderlo y generar ingresos</li>
-      </ul>
-    </div>
-    <div class="melh-franja__col melh-franja__col--faq">
-      <h3 class="melh-franja__pregunta">¿Necesito tener herramientas industriales o tener experiencia previa?</h3>
-      <p class="melh-franja__respuesta">No, no necesitás nada de eso: con solo algunas herramientas súper básicas vas a aprender a crear tu mueble sin necesidad de experiencia previa.</p>
-    </div>
+    <h2 class="melh-franja__titulo">ESTE CURSO ES PARA <span>VOS</span> SI:</h2>
+    <ul class="melh-franja__lista">
+      <li><svg aria-hidden="true"><use href="#melh-asterisco"/></svg>Querés crear un mueble único y de calidad a un muy bajo costo</li>
+      <li><svg aria-hidden="true"><use href="#melh-asterisco"/></svg>Querés fabricar un mueble para venderlo y generar ingresos</li>
+    </ul>
   </div>
 </header>
 
