@@ -6,7 +6,7 @@ Genera los bloques "Código HTML" del diseño nuevo (versión de `landing-demo/`
 
 Publicado en https://melaminico.tiendup.com/ en 6 bloques (01 hero, 02 aprender, 03 primer paso, 04 armado, 05 cursos, 06 footer). Imágenes en el CDN de Tiendup (`urls.json` completo), video en YouTube (`armado_youtube`), mail e Instagram en `config.json`. Cada cambio de contenido se hace en `src/`, se corre `python3 build.py` y se repega solo el bloque afectado. Historial en `../docs/01-bitacora.md`.
 
-- **Hero:** el cliente está eligiendo qué va en el lado derecho (sello "100% ONLINE", celular con una clase en video, o nada). `hero_visual` en `config.json` está en `"ninguno"` (con el texto centrado). Se cambia el valor, se regenera y se repega `01-hero.html`.
+- **Hero:** el cliente eligió (2026-10-07) el **celular con una clase en video**; `hero_visual` en `config.json` está en `"celular"`. Las otras dos variantes (`"sello"`, `"ninguno"` con el texto centrado) siguen disponibles en `src/hero-visual/`: se cambia el valor, se regenera y se repega `01-hero.html`.
 - **Bloque 02:** incluye al final la sección "¿Necesito tener herramientas industriales o tener experiencia previa?".
 - **Dominio:** `melaminico.com` comprado en DonWeb, con los servidores de nombres ya delegados a Tiendup; falta que propague (hasta 72 h) y revisar HTTPS y la redirección desde `melaminico.tiendup.com`. Los enlaces de la landing son relativos, no hay que cambiar nada.
 
@@ -38,6 +38,5 @@ Publicado en https://melaminico.tiendup.com/ en 6 bloques (01 hero, 02 aprender,
 
 ## Pendientes conocidos
 
-- Decisión del cliente sobre la imagen del hero (`hero_visual`).
 - Conectar el dominio `melaminico.com` (propagación) y cambiar el enlace de la descripción del video de YouTube.
 - Mejora opcional: reemplazar el logo del hero (367 px) por `../youtube/logo-hd-transparente.png` (4113 px) subiéndolo al CDN.

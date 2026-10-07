@@ -38,7 +38,7 @@ La landing está dividida en **6 bloques**, uno por sección:
 
 | Nº | Archivo | Qué muestra |
 |----|---------|-------------|
-| 01 | `01-hero` | Portada: logo, título y botón principal, más la banda "Este curso es para vos si:". El lado derecho puede llevar una imagen opcional (`hero_visual` en `config.json`) |
+| 01 | `01-hero` | Portada: logo, título y botón principal, más la banda "Este curso es para vos si:". A la derecha va un celular con una clase en video (imagen intercambiable con `hero_visual` en `config.json`) |
 | 02 | `02-aprender` | Qué vas a aprender (incluye el programa SketchCut) y la sección "¿Necesito herramientas industriales o experiencia previa?" |
 | 03 | `03-primer-paso` | Tu primer proyecto |
 | 04 | `04-armado` | Video del armado de fondo |
