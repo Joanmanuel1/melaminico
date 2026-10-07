@@ -8,32 +8,47 @@
 }
 .curso--inicial { background: var(--navy); color: var(--blanco); }
 .curso--completo { background: var(--blanco); color: var(--navy); }
-.curso h3 { font-family: var(--f-titulo); font-weight: 400; font-size: clamp(1rem, 4.4vw, 1.9rem); letter-spacing: -.02em; }
+.curso h3 { font-family: var(--f-titulo); font-weight: 400; font-size: clamp(1rem, 4.4vw, 1.9rem); letter-spacing: -.02em; text-align: center; }
 .curso--completo h3 { color: var(--naranja); }
-.curso ul { align-self: stretch; list-style: disc; padding-left: 1.2rem; font-family: var(--f-titulo); font-size: clamp(.875rem, 3.3vw, 1.2rem); line-height: 1.15; display: grid; gap: .1rem; }
-.curso li { display: list-item; }
-.curso li::marker { color: currentColor; }
+.curso ul {
+  align-self: center;
+  width: fit-content;
+  max-width: 100%;
+  display: grid;
+  gap: .55rem;
+  font-family: var(--f-titulo);
+  font-size: clamp(.875rem, 3.3vw, 1.2rem);
+  line-height: 1.2;
+}
+.curso li { display: flex; align-items: flex-start; gap: .55rem; }
+.curso li svg { width: 1.05em; height: 1.05em; margin-top: .08em; color: var(--naranja); flex: none; }
 .curso__comprar {
   margin-top: auto;
+  align-self: center;
+  width: min(100%, 13rem);
+  min-height: 48px;
+  padding: .7rem 1rem;
   display: inline-flex;
   align-items: center;
-  gap: .7rem;
-  font-family: var(--f-titulo);
-  font-size: clamp(.875rem, 3.2vw, 1.05rem);
-}
-.curso__comprar svg { width: clamp(28px, 8vw, 40px); height: clamp(28px, 8vw, 40px); color: var(--naranja); }
-.curso__comprar span {
-  padding: .65rem clamp(1rem, 5vw, 2.2rem);
+  justify-content: center;
+  gap: .6rem;
   background: var(--naranja);
   color: var(--navy);
   border-radius: 10px;
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, .35);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, .35);
+  font-family: var(--f-titulo);
+  font-size: clamp(.875rem, 3.4vw, 1.05rem);
+  letter-spacing: .01em;
+  text-transform: uppercase;
   transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
-.curso__comprar:hover span { background: var(--naranja-claro); transform: translateY(-2px); box-shadow: 5px 5px 0 rgba(0, 0, 0, .35); }
+.curso--inicial .curso__comprar { box-shadow: 4px 4px 0 rgba(255, 255, 255, .22); }
+.curso__comprar svg { width: 1.45em; height: 1.45em; flex: none; }
+a.curso__comprar:hover { color: var(--navy); background: var(--naranja-claro); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(0, 0, 0, .35); }
+.curso--inicial a.curso__comprar:hover { box-shadow: 6px 6px 0 rgba(255, 255, 255, .22); }
 
 @media (prefers-reduced-motion: reduce) {
-  .curso__comprar span { transition: none; }
+  .curso__comprar { transition: none; }
 }
 
 @media (min-width: 960px) {

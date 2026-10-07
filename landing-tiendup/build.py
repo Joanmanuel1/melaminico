@@ -160,6 +160,8 @@ def build(local):
         html = read(f"{name}.html")
         if name == "01-hero":
             html = html.replace("[[hero-visual]]", read(f"hero-visual/{visual}.html").rstrip("\n") if visual != "ninguno" else "")
+            if visual == "ninguno":
+                html = html.replace('<header class="hero">', '<header class="hero hero--solo">', 1)
         if name == "04-armado":
             poster = '<img class="__P__-armado__video" src="[[img:armado-poster]]" alt="" aria-hidden="true">'
             if yt_id:

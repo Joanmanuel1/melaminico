@@ -2,7 +2,7 @@
 
 Melamínico es una escuela online de carpintería en melamina: enseña a diseñar y armar muebles (por ejemplo, una mesita de luz) con cursos grabados y asesoría. Los cursos se venden en una tienda de **Tiendup**:
 
-**Sitio en vivo:** https://melaminico.tiendup.com/
+**Sitio en vivo:** https://melaminico.tiendup.com/ (el dominio propio `melaminico.com` está comprado y en proceso de conexión a Tiendup)
 
 Este repositorio guarda los archivos finales de la **landing page**, que es la página principal de la tienda: el diseño, las imágenes y el código que está publicado.
 
@@ -38,11 +38,11 @@ La landing está dividida en **6 bloques**, uno por sección:
 
 | Nº | Archivo | Qué muestra |
 |----|---------|-------------|
-| 01 | `01-hero` | Portada: logo, título y botón principal |
-| 02 | `02-aprender` | Qué vas a aprender (incluye el programa SketchCut) |
+| 01 | `01-hero` | Portada: logo, título y botón principal, más la banda "Este curso es para vos si:". El lado derecho puede llevar una imagen opcional (`hero_visual` en `config.json`) |
+| 02 | `02-aprender` | Qué vas a aprender (incluye el programa SketchCut) y la sección "¿Necesito herramientas industriales o experiencia previa?" |
 | 03 | `03-primer-paso` | Tu primer proyecto |
 | 04 | `04-armado` | Video del armado de fondo |
-| 05 | `05-cursos` | Las dos opciones de curso con botón para comprar |
+| 05 | `05-cursos` | Las dos opciones de curso, con viñetas de asterisco y botón COMPRAR |
 | 06 | `06-footer` | Cierre: mail, Instagram y link al catálogo |
 
 Escribir todo en un solo archivo por bloque sería incómodo, así que el código está separado en `src/` (un `.html`, un `.css` y a veces un `.js` por sección). El script `build.py`:

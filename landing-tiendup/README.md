@@ -2,9 +2,13 @@
 
 Genera los bloques "Código HTML" del diseño nuevo (versión de `landing-demo/`) listos para pegar en el editor de Tiendup. **Fuente de verdad: `src/` + `config.json` + `urls.json`; los archivos de `dist/`, `dist-local/`, `preview*.html` y `subir/` se regeneran con `build.py` y no se editan a mano.**
 
-## Estado (2026-10-06)
+## Estado (2026-10-07)
 
 Publicado en https://melaminico.tiendup.com/ en 6 bloques (01 hero, 02 aprender, 03 primer paso, 04 armado, 05 cursos, 06 footer). Imágenes en el CDN de Tiendup (`urls.json` completo), video en YouTube (`armado_youtube`), mail e Instagram en `config.json`. Cada cambio de contenido se hace en `src/`, se corre `python3 build.py` y se repega solo el bloque afectado. Historial en `../docs/01-bitacora.md`.
+
+- **Hero:** el cliente está eligiendo qué va en el lado derecho (sello "100% ONLINE", celular con una clase en video, o nada). `hero_visual` en `config.json` está en `"ninguno"` (con el texto centrado). Se cambia el valor, se regenera y se repega `01-hero.html`.
+- **Bloque 02:** incluye al final la sección "¿Necesito tener herramientas industriales o tener experiencia previa?".
+- **Dominio:** `melaminico.com` comprado en DonWeb, con los servidores de nombres ya delegados a Tiendup; falta que propague (hasta 72 h) y revisar HTTPS y la redirección desde `melaminico.tiendup.com`. Los enlaces de la landing son relativos, no hay que cambiar nada.
 
 ## Pasos
 
@@ -16,8 +20,7 @@ Publicado en https://melaminico.tiendup.com/ en 6 bloques (01 hero, 02 aprender,
 
 ## Vista previa local
 
-`python3 build.py --local` arma `preview.html` con imágenes locales; `python3 build.py` (build final) arma `preview-final.html` con las URLs reales de Tiendup. 
-`python3 build.py --local` y abrir `preview.html` con un servidor desde la raíz del proyecto (`python3 -m http.server 8765`, luego `http://localhost:8765/landing-tiendup/preview.html`). Usa el CSS real del tema de Tiendup, datos de contacto de ejemplo (solo en local).
+`python3 build.py --local` arma `preview.html` con imágenes locales; `python3 build.py` (build final) arma `preview-final.html` con las URLs reales de Tiendup. Para ver la vista previa: abrir `preview.html` con un servidor desde la raíz del proyecto (`python3 -m http.server 8765`, luego `http://localhost:8765/landing-tiendup/preview.html`). Usa el CSS real del tema de Tiendup, datos de contacto de ejemplo (solo en local).
 
 ## Ajustes del editor en cada bloque
 
@@ -28,11 +31,13 @@ Publicado en https://melaminico.tiendup.com/ en 6 bloques (01 hero, 02 aprender,
 
 - `src/NN-*.html|css|js`: una sección por archivo; `src/shared/`: reglas repetidas en cada bloque (reset, botón, chips, fotos, reveal).
 - `build.py` antepone un prefijo propio a cada bloque (`melh-`, `mela-`...) en clases, ids y selectores, de modo que ningún bloque pisa a otro ni al tema de Tiendup, y arma cada bloque autocontenido (sin comentarios, como exige el editor).
-- Contenido destacado de `src/`: `01-hero` (hero con un celular que simula una clase en video —foto del armado, botón de play y etiqueta CLASES GRABADAS— en lugar de la computadora + banda "Este curso es para vos si:"), `02-aprender` (banner + grilla de chips; el programa es SketchCut; al final la sección de la pregunta sobre herramientas y experiencia), `04-armado` (video de YouTube como fondo, con poster), `06-footer` (cinta animada, marca, frase de cierre, botón a `/c`, íconos de Instagram y mail).
+- Contenido destacado de `src/`: `01-hero` (hero con imagen opcional a la derecha, ver `hero_visual`, + banda "Este curso es para vos si:"), `02-aprender` (banner + grilla de chips; el programa es SketchCut; al final la sección de la pregunta sobre herramientas y experiencia), `04-armado` (video de YouTube como fondo, con poster), `06-footer` (cinta animada, marca, frase de cierre, botón a `/c`, íconos de Instagram y mail).
 - **Imagen del hero (`hero_visual` en `config.json`):** `"ninguno"` (sin imagen), `"celular"` (celular con una clase en video) o `"sello"` (sello circular "100% ONLINE"). Se cambia el valor, se corre `python3 build.py` y se repega solo `dist/01-hero.html`. Cada variante vive en `src/hero-visual/`.
 - Los links están en `config.json`: hero y "Visita nuestra página" van a `/c`; los botones Comprar van a los dos productos (`compra_inicial`, `compra_completo`). Si cambia el nombre de un producto, actualizar ahí y regenerar.
 - Fuentes por Google Fonts (el sitio no tiene CSP que las bloquee).
 
 ## Pendientes conocidos
 
-- Ninguno técnico abierto. Mejora opcional: reemplazar el logo del hero (367 px) por `../youtube/logo-hd-transparente.png` (4113 px) subiéndolo al CDN.
+- Decisión del cliente sobre la imagen del hero (`hero_visual`).
+- Conectar el dominio `melaminico.com` (propagación) y cambiar el enlace de la descripción del video de YouTube.
+- Mejora opcional: reemplazar el logo del hero (367 px) por `../youtube/logo-hd-transparente.png` (4113 px) subiéndolo al CDN.
